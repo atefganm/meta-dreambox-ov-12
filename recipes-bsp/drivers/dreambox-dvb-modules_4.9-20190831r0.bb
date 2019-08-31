@@ -1,5 +1,5 @@
-SRC_URI[dreamone.md5sum] = "7866a108cf500971fd9728c12b1fa002"
-SRC_URI[dreamone.sha256sum] = "fed5268d237acd392b6d801261343fb79318ab4dba840fc669fc00ceef581ec5"
+SRC_URI[dreamone.md5sum] = "46ec16659c46a6bda2d3bcdf56e39600"
+SRC_URI[dreamone.sha256sum] = "6ce9cb641a01914c34b14018dd5f7b8a9d73e1b374cb9969c624ea2a920ad45a"
 
 require dreambox-dvb-modules-meson.inc
 
@@ -10,3 +10,5 @@ do_license() {
 }
 
 addtask do_license before do_populate_lic after do_unpack
+
+COMPATIBLE_MACHINE = "^(dreamone)$"
