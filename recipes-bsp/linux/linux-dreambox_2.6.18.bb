@@ -67,7 +67,6 @@ SRC_URI = " \
         file://mips-pps.patch \
 	file://vermagic.patch \
 	file://binutils-gcc6.patch \
-	file://kernel-gcc7.patch \
 	file://add_resolution_to_absinfo.patch \
 	file://add_strcasecmp.patch \
 	file://extra_ipv6_headers.patch \
@@ -191,4 +190,4 @@ pkg_postrm_kernel () {
 }
 
 FILES_kernel-vmlinux += " boot/vmlinux-2.6.18-7.4-${MACHINE}.gz"
-FILES_kernel-image += " ${KERNEL_IMAGEDEST}/autoexec*.bat"
+FILES_${KERNEL_PACKAGE_NAME}-image += " ${KERNEL_IMAGEDEST}/autoexec*.bat"
