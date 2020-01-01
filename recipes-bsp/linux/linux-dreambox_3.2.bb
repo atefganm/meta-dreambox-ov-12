@@ -34,10 +34,14 @@ SRC_URI = " \
 			file://024-rtl8712-fix-warnings.patch \
 			file://025-fixme-hardfloat.patch \
 			file://026-correctly-initiate-nand-flash-ecc-config-when-old-2n.patch \
-			file://027-kernel-add-support-for-gcc6.patch \
 			file://028-move-atomic-flags-field-after-cputime-expires-field.patch \
 			file://029-dvb_frontend-backport-multistream-support.patch \
 			file://defconfig \
+			file://genksyms_fix_typeof_handling.patch \
+			file://0012-log2-give-up-on-gcc-constant-optimizations.patch \
+			file://0013-cp1emu-do-not-use-bools-for-arithmetic.patch \
+			file://0014-makefile-silence-packed-not-aligned-warn.patch \
+			file://0015-fcrypt-fix-bitoperation-for-gcc.patch \
 "
 
 SRC_URI[kernel.md5sum] = "7ceb61f87c097fc17509844b71268935"

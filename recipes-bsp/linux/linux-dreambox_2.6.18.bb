@@ -66,7 +66,6 @@ SRC_URI = " \
 	file://mips-utimensat.patch \
         file://mips-pps.patch \
 	file://vermagic.patch \
-	file://binutils-gcc6.patch \
 	file://add_resolution_to_absinfo.patch \
 	file://add_strcasecmp.patch \
 	file://extra_ipv6_headers.patch \
