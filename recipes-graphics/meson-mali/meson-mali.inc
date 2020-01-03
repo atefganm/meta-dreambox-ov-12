@@ -17,4 +17,4 @@ FILES_${PN} += "${libdir}/lib*${SOLIBSDEV}"
 FILES_SOLIBSDEV = ""
 INSANE_SKIP_${PN} = "dev-so"
 
-COMPATIBLE_MACHINE = "^(meson64)$"
+COMPATIBLE_MACHINE = "^(dreamone)$"

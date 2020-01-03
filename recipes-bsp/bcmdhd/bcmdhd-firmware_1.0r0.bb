@@ -12,3 +12,5 @@ do_license() {
 }
 
 addtask do_license before do_populate_lic after do_unpack
+
+COMPATIBLE_MACHINE = "^(dreamone)$"

@@ -19,4 +19,4 @@ if [ -z "$D" ]; then
 fi
 }
 
-COMPATIBLE_MACHINE = "^(meson64)$"
+COMPATIBLE_MACHINE = "^(dreamone)$"

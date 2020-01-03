@@ -11,7 +11,7 @@ SRC_URI[sha256sum] = "177af925bc2e7130e59dc56b0e6f13b992fee8ab57e7b221671e5cb2ec
 
 S = "${WORKDIR}/${BPN}.${PV}"
 
-COMPATIBLE_MACHINE = "^(meson64)$"
+COMPATIBLE_MACHINE = "^(dreamone)$"
 
 export KCFLAGS = "-Wno-error=stringop-overflow \
                   -Wno-error=address-of-packed-member \

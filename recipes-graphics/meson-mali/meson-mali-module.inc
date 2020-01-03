@@ -45,7 +45,7 @@ if [ -z "$D" ]; then
 fi
 }
 
-COMPATIBLE_MACHINE = "^(meson64)$"
+COMPATIBLE_MACHINE = "^(dreamone)$"
 
 addtask make_scripts after do_prepare_recipe_sysroot before do_compile
 do_make_scripts[lockfiles] = "${TMPDIR}/kernel-scripts.lock"
