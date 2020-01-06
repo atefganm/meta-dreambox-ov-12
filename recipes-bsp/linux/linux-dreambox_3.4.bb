@@ -14,6 +14,7 @@ SRC_URI = " \
     file://dvb_frontend-Multistream-support-3.4.patch \
     file://genksyms_fix_typeof_handling.patch \
     file://defconfig \
+    file://kernel-add-support-for-gcc9.patch \
     file://0001-log2-give-up-on-gcc-constant-optimizations.patch \
     file://0002-cp1emu-do-not-use-bools-for-arithmetic.patch \
     file://0003-makefile-silence-packed-not-aligned-warn.patch \
