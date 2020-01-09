@@ -22,7 +22,7 @@ do_install_append() {
         install -d ${D}/usr/src/kernel
 }
 
-PACKAGES += "kernel-image-dbg"
+PACKAGES += "${KERNEL_PACKAGE_NAME}-image-dbg"
 
 FILES_${KERNEL_PACKAGE_NAME}-image-dbg = "/${KERNEL_IMAGEDEST}/.debug"
 FILES_${KERNEL_PACKAGE_NAME}-vmlinux = "/boot/vmlinux-${LINUX_VERSION}"

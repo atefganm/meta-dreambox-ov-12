@@ -11,11 +11,11 @@ KERNEL_ENABLE_CGROUPS = "1"
 # to be installed in parallel. We revert this change and rprovide the versioned
 # package names instead, to allow only one kernel to be installed.
 PKG_kernel = "kernel"
-RPROVIDES_kernel = "kernel-${KERNEL_VERSION_PKG_NAME}"
-PKG_kernel-base = "kernel-base"
-RPROVIDES_kernel-base = "kernel-base-${KERNEL_VERSION_PKG_NAME}"
-RDEPENDS_kernel-base = ""
-PACKAGES_remove = "kernel-image"
+RPROVIDES_kernel = "${KERNEL_PACKAGE_NAME}-${KERNEL_VERSION_PKG_NAME}"
+PKG_${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-base"
+RPROVIDES_${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-base-${KERNEL_VERSION_PKG_NAME}"
+RDEPENDS_${KERNEL_PACKAGE_NAME}-base = ""
+PACKAGES_remove = "${KERNEL_PACKAGE_NAME}-image"
 
 KERNEL_FLASH_ARGS ?= ""
 
