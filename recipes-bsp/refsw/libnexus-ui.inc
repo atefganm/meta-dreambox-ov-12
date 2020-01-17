@@ -11,4 +11,3 @@ ALLOW_EMPTY_${PN}-dbg = "1"
 
 EXCLUDE_FROM_WORLD = "1"
 
-INSANE_SKIP_${PN} = "dev-so"

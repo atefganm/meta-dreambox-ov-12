@@ -22,7 +22,6 @@ inherit module-base
 INHIBIT_PACKAGE_STRIP = "1"
 INHIBIT_SYSROOT_STRIP = "1"
 
-INSANE_SKIP_${PN}_append = " already-stripped"
 
 do_install() {
     find . -depth -not -path "./patches*" -not -path "./.pc*" -print0 | cpio --null -pdlu ${D}
