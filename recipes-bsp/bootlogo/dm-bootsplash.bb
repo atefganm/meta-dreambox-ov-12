@@ -5,7 +5,7 @@ MAINTAINER = "Dream Multimedia"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 LICENSE = "CLOSED"
 
-COMPATIBLE_MACHINE = "^(dm800|dm500hd|dm500hdv2|dm800se|dm800sev2|dm7020hd|dm8000)$"
+COMPATIBLE_MACHINE = "^(dm500hd|dm500hdv2|dm800se|dm800sev2|dm7020hd|dm8000)$"
 
 BINARY_VERSION = "1.3"
 PV = "${BINARY_VERSION}"
@@ -13,10 +13,7 @@ PV = "${BINARY_VERSION}"
 S = "${WORKDIR}"
 
 SRC_URI = "http://dreamboxupdate.com/download/opendreambox/2.0.0/dreambox-bootlogo/dreambox-bootlogo_${BINARY_VERSION}_${MACHINE}.tar.bz2;name=${MACHINE}"
-SRC_URI_append_dm800 = " file://dm800-logo.jpg"
 
-SRC_URI[dm800.md5sum] = "0aacd07cc4d19b388c6441b007e3525a"
-SRC_URI[dm800.sha256sum] = "978a7c50fd0c963013477b5ba08462b35597ea130ae428c828bfcbb5c7cf4cac"
 SRC_URI[dm8000.md5sum] = "1b63ac7e2bd5c0db0748606acc310d47"
 SRC_URI[dm8000.sha256sum] = "91e4402190fe88cf394ae780141d968a1ebecd8db7b23c1f0ca3f4bfa9c9512a"
 SRC_URI[dm800se.md5sum] = "3413a894a3d77e02cae34b96d302817d"
@@ -33,12 +30,7 @@ SRC_URI[dm500hdv2.sha256sum] = "005b9e99566fdee4d76ec1532273dc3e29a14b723d0bf610
 do_install() {
     install -d ${D}/boot
     install -m 0755 ${S}/dreambox-bootlogo_${BINARY_VERSION}_${MACHINE}/bootlogo-${MACHINE}.elf.gz ${D}/boot/
-    if [ "${MACHINE}" == "dm800" ]
-    then
-        install -m 0755 ${S}/dm800-logo.jpg ${D}/boot/bootlogo-${MACHINE}.jpg
-    else
-        install -m 0755 ${S}/dreambox-bootlogo_${BINARY_VERSION}_${MACHINE}/bootlogo-${MACHINE}.jpg ${D}/boot/
-    fi
+    install -m 0755 ${S}/dreambox-bootlogo_${BINARY_VERSION}_${MACHINE}/bootlogo-${MACHINE}.jpg ${D}/boot/
 }
 
 inherit deploy
