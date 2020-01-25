@@ -37,6 +37,10 @@ SRC_URI = " \
 			file://027-kernel-add-support-for-gcc9.patch \
 			file://028-move-atomic-flags-field-after-cputime-expires-field.patch \
 			file://029-dvb_frontend-backport-multistream-support.patch \
+			file://030-STV-Add-MIS-PLS-support.patch \
+			file://031-STV-Add-SNR-Signal-report-parameters.patch  \
+			file://032-stv090x-optimized-TS-sync-control.patch \
+			file://033-tbs.patch \
 			file://defconfig \
 			file://genksyms_fix_typeof_handling.patch \
 			file://0012-log2-give-up-on-gcc-constant-optimizations.patch \
