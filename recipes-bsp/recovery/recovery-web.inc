@@ -21,6 +21,4 @@ RDEPENDS_${PN} = "\
     recovery \
 "
 
-RRECOMMENDS_${PN} = "\
-    dreambox-dvb-modules-stb-core \
-"
+#RRECOMMENDS_${PN} = "dreambox-dvb-modules-stb-core"

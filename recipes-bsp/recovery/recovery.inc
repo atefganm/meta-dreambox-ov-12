@@ -108,9 +108,7 @@ RDEPENDS_flash-scripts_append_dreamone = "\
     u-boot-mkimage \
 "
 
-RRECOMMENDS_flash-scripts = "\
-    dreambox-dvb-modules-stb-core \
-"
+#RRECOMMENDS_flash-scripts = "dreambox-dvb-modules-stb-core"
 
 FILES_${PN}-autoflashd = "\
     ${sysconfdir}/init.d/autoflashd \
