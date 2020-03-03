@@ -59,7 +59,9 @@ FILES_${PN}-lcd = "${sysconfdir}/modules-load.d/02-${BPN}-lcd.conf \
                    /lib/modules/${DM_LOCALVERSION}/extra/lcd.ko"
 
 FILES_${PN}-stb-core = "${sysconfdir}/modules-load.d/01-${BPN}-stb-core.conf \
-                        /lib/modules/${DM_LOCALVERSION}/extra/stb-core.ko"
+                        /lib/modules/${DM_LOCALVERSION}/extra/stb-core.ko \
+                        /lib/modules/${DM_LOCALVERSION}/extra/core/boxsec.ko \
+                        /lib/modules/${DM_LOCALVERSION}/extra/stb/stb-core.ko"
 
 # We don't use KERNEL_VERSION in this recipe, because the
 # precompiled modules depend on a specific version.

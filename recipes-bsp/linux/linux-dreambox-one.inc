@@ -1,5 +1,12 @@
 require linux-one.inc
-require linux-rdepends.inc
+
+RDEPENDS_kernel-module-carl9170 ?= "linux-firmware-carl9170"
+RDEPENDS_kernel-module-r8712u ?= "linux-firmware-rtl8192su"
+RDEPENDS_kernel-module-rt2800usb ?= "linux-firmware-rt2800usb"
+RDEPENDS_kernel-module-rt73usb ?= "linux-firmware-rt73usb"
+RDEPENDS_kernel-module-zd1211rw ?= "zd1211-firmware"
+RRECOMMENDS_kernel-module-cifs ?= "kernel-module-arc4 kernel-module-ecb kernel-module-hmac kernel-module-md4"
+RRECOMMENDS_kernel-module-mac80211 ?= "kernel-module-aes-generic kernel-module-arc4"
 
 do_configure_prepend() {
         sed -e "/^SUBLEVEL = /d" -i ${S}/Makefile
@@ -46,15 +53,6 @@ python __anonymous() {
     d.setVar('RDEPENDS_kernel-base', 'kernel-image-%s' % imagetype.lower())
 }
 
-PROVIDES_append_bcm73625 = " dreambox-rescue-image-${MACHINE}"
-PROVIDES_append_bcm7435 = " dreambox-rescue-image-${MACHINE}"
-PROVIDES_append_bcm7439 = " dreambox-rescue-image-${MACHINE}"
-INITRAMFS_IMAGE_bcm73625 = "dreambox-rescue-image"
-INITRAMFS_IMAGE_bcm7435 = "dreambox-rescue-image"
-INITRAMFS_IMAGE_bcm7439 = "dreambox-rescue-image"
-INITRAMFS_IMAGE_BUNDLE_bcm73625 = "1"
-INITRAMFS_IMAGE_BUNDLE_bcm7435 = "1"
-INITRAMFS_IMAGE_BUNDLE_bcm7439 = "1"
 INITRAMFS_BASE_NAME = "rescue-${PV}-${PR}-${MACHINE}-${DATETIME}"
 
 def kernel_console(d):

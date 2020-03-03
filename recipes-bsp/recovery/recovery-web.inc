@@ -1,6 +1,7 @@
 SUMMARY = "Provides web pages for the rescue partition"
 HOMEPAGE = "http://dreamboxupdate.com/"
 LICENSE = "CLOSED"
+
 DEPENDS = "fcgi"
 
 SRC_URI_append = ";branch=${BRANCH}"
@@ -11,12 +12,15 @@ do_install() {
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-RDEPENDS_${PN} = " \
+RDEPENDS_${PN} = "\
     coreutils-stdbuf \
     haserl \
     lighttpd \
     lighttpd-module-cgi \
     lighttpd-module-fastcgi \
     recovery \
-    tpm-ca \
+"
+
+RRECOMMENDS_${PN} = "\
+    dreambox-dvb-modules-stb-core \
 "

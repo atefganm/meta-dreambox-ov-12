@@ -1,16 +1,21 @@
 DEPENDS = "libgcc"
 PROVIDES = "linux-dreambox"
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 require recipes-bsp/linux/linux-dreambox-one.inc
 
-SRC_URI = "https://dreamboxupdate.com/download/opendreambox/${BPN}/${BPN}-v${PV}.tar.xz"
-SRC_URI[md5sum] = "f084198603c2bdd580fa09de2f98527d"
-SRC_URI[sha256sum] = "4809dfd2aff93c6bc6fe4439dbf768d3a2cb5c67a8235074e87c328517ab1fab"
+SRC_URI = "https://dreamboxupdate.com/download/opendreambox/linux-meson64/linux-meson64-v${PV}.tar.xz \
+    file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc9.patch \
+    "
+
+SRC_URI[md5sum] = "d5770c1cf86b093cb17fa6dafce03ff9"
+SRC_URI[sha256sum] = "258e542be44bef8a36fe63fc963e1c8e14a6e549bafd4e1cb44817aedea9a7d8"
 
 KERNEL_CC += "${TOOLCHAIN_OPTIONS}"
 KERNEL_LD += "${TOOLCHAIN_OPTIONS}"
 
-S = "${WORKDIR}/${BPN}-v${PV}"
+S = "${WORKDIR}/linux-meson64-v${PV}"
 
 CMDLINE = "${@kernel_console(d)} root=/dev/mmcblk0p7 rootwait rootfstype=ext4 no_console_suspend"
 
