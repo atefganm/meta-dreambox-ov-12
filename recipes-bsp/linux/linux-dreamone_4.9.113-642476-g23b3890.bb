@@ -1,4 +1,5 @@
 DEPENDS = "libgcc"
+RDEPENDS_${PN} += "flash-scripts"
 PROVIDES = "linux-dreambox"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
