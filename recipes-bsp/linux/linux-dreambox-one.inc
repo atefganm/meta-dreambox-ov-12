@@ -18,9 +18,9 @@ KERNEL_ENABLE_CGROUPS = "1"
 # to be installed in parallel. We revert this change and rprovide the versioned
 # package names instead, to allow only one kernel to be installed.
 PKG_kernel = "kernel"
-RPROVIDES_kernel = "${KERNEL_PACKAGE_NAME}-${KERNEL_VERSION_PKG_NAME}"
+RPROVIDES_${KERNEL_PACKAGE_NAME} = "${KERNEL_PACKAGE_NAME}-${KERNEL_VERSION}"
 PKG_${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-base"
-RPROVIDES_${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-base-${KERNEL_VERSION_PKG_NAME}"
+RPROVIDES_${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-base-${KERNEL_VERSION}"
 RDEPENDS_${KERNEL_PACKAGE_NAME}-base = ""
 PACKAGES_remove = "${KERNEL_PACKAGE_NAME}-image"
 
@@ -35,7 +35,7 @@ python __anonymous() {
 
     for imagetype in set(types):
         d.setVar('PKG_kernel-image-%s' % imagetype.lower(), 'kernel-image-%s' % imagetype.lower())
-        d.setVar('RPROVIDES_kernel-image-%s' % imagetype.lower(), 'kernel-image-%s-${KERNEL_VERSION_PKG_NAME}' % imagetype.lower())
+        d.setVar('RPROVIDES_kernel-image-%s' % imagetype.lower(), 'kernel-image-%s-${KERNEL_VERSION}' % imagetype.lower())
         if devicetree:
             d.appendVar('RDEPENDS_kernel-image-%s' % imagetype.lower(), ' kernel-devicetree')
 
@@ -49,7 +49,7 @@ python __anonymous() {
     d.setVar('pkg_postinst_kernel-image-%s' % imagetype.lower(), postinst)
 
     d.setVar('PKG_kernel-image-%s' % imagetype.lower(), 'kernel-image')
-    d.appendVar('RPROVIDES_kernel-image-%s' % imagetype.lower(), ' kernel-image-${KERNEL_VERSION_PKG_NAME}')
+    d.appendVar('RPROVIDES_kernel-image-%s' % imagetype.lower(), ' kernel-image-${KERNEL_VERSION}')
     d.setVar('RDEPENDS_kernel-base', 'kernel-image-%s' % imagetype.lower())
 }
 
