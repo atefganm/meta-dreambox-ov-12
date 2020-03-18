@@ -54,9 +54,6 @@ do_configure_prepend() {
     kernel_conf_variable DEVTMPFS y
     kernel_conf_variable DEVTMPFS_MOUNT y
 
-    # Open Vision
-    kernel_conf_variable AMLOGIC_HDMITX n
-
     # Newer inits like systemd need cgroup support
     if [ "${KERNEL_ENABLE_CGROUPS}" = "1" ] ; then
         kernel_conf_variable CGROUP_SCHED y

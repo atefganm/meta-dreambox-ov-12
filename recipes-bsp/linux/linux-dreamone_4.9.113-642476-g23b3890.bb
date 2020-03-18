@@ -1,5 +1,4 @@
 DEPENDS = "libgcc"
-RDEPENDS_${PN} += "flash-scripts"
 PROVIDES = "linux-dreambox"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
@@ -37,6 +36,7 @@ export KCFLAGS = "-Wno-error=misleading-indentation \
                   -Wno-error=maybe-uninitialized \
                   -Wno-error=missing-attributes \
                   -Wno-error=unused-variable \
+                  -Wno-error=stringop-overflow \
                   "
 
 do_install_prepend() {
