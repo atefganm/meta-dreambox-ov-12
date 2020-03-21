@@ -1,5 +1,6 @@
 DEPENDS = "libgcc"
 PROVIDES = "linux-dreambox"
+PE = "1"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
@@ -39,8 +40,19 @@ export KCFLAGS = "-Wno-error=misleading-indentation \
                   -Wno-error=stringop-overflow \
                   "
 
-do_install_prepend() {
-	mv ${B}/arch/arm64/boot/dts/amlogic/dreamone.dtb ${B}/arch/arm64/boot/
+do_compile_append() {
+    if test -n "${KERNEL_DEVICETREE}"; then
+    	for DTB in ${KERNEL_DEVICETREE}; do
+    		if echo ${DTB} | grep -q '/dts/'; then
+    			bbwarn "${DTB} contains the full path to the the dts file, but only the dtb name should be used."
+    			DTB=`basename ${DTB} | sed 's,\.dts$,.dtb,g'`
+    		fi
+    		oe_runmake ${DTB}
+    	done
+    	# Create directory, this is needed for out of tree builds
+    	mkdir -p ${B}/arch/arm64/boot/dts/amlogic/
+    	cp ${B}/arch/arm64/boot/dts/amlogic/${KERNEL_DEVICETREE} ${B}/arch/arm64/boot/
+    fi
 }
 
 KERNEL_FLASH_ARGS = "-c '${CMDLINE}'"
