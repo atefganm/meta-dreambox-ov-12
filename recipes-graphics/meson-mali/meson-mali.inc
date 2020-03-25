@@ -15,5 +15,3 @@ RREPLACES_${PN}-dev = "libegl-dev libgles2-dev"
 
 FILES_${PN} += "${libdir}/lib*${SOLIBSDEV}"
 FILES_SOLIBSDEV = ""
-
-COMPATIBLE_MACHINE = "^(dreamone)$"
