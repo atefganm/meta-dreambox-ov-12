@@ -67,6 +67,12 @@ do_configure_prepend() {
         kernel_conf_variable RESOURCE_COUNTERS y
     fi
 
+    kernel_conf_variable CDROM_PKTCDVD m
+    kernel_conf_variable UDF_FS m
+    kernel_conf_variable MTD_BLOCK2MTD m
+    kernel_conf_variable MTD_NAND_NANDSIM m
+    kernel_conf_variable DEFAULT_HOSTNAME="${MACHINE}"
+
     sed -e "${CONF_SED_SCRIPT}" \
     < '${WORKDIR}/defconfig' >>'${B}/.config'
 
@@ -85,5 +91,3 @@ do_install_append() {
 
 PACKAGES =+ "${KERNEL_PACKAGE_NAME}-headers"
 FILES_${KERNEL_PACKAGE_NAME}-headers = "${exec_prefix}/src/linux*"
-
-KERNEL_MODULE_AUTOLOAD += "nfsd"
