@@ -10,10 +10,6 @@ RDEPENDS_kernel-module-zd1211rw ?= "zd1211-firmware"
 RRECOMMENDS_kernel-module-cifs ?= "kernel-module-arc4 kernel-module-ecb kernel-module-hmac kernel-module-md4"
 RRECOMMENDS_kernel-module-mac80211 ?= "kernel-module-aes-generic kernel-module-arc4"
 
-do_configure_prepend() {
-        sed -e "/^SUBLEVEL = /d" -i ${S}/Makefile
-}
-
 KERNEL_ENABLE_CGROUPS = "1"
 
 # By default, kernel.bbclass modifies package names to allow multiple kernels

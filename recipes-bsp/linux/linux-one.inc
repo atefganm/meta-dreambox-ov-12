@@ -22,6 +22,8 @@ kernel_conf_variable() {
 DEFCONFIG_IN_SRC_URI = "${@bb.utils.contains('SRC_URI', 'file://defconfig', 'true', 'false', d)}"
 
 do_configure_prepend() {
+    sed -e "/^SUBLEVEL = /d" -i ${S}/Makefile
+
     if [ -n "${DEFCONFIG}" ] && ! ${DEFCONFIG_IN_SRC_URI}; then
         yes '' | oe_runmake -C ${S} O=${B} ${DEFCONFIG}_defconfig
         mv ${B}/.config ${WORKDIR}/defconfig
@@ -83,6 +85,7 @@ do_configure_append() {
     if test -e scripts/Makefile.fwinst ; then
         sed -i -e "s:-m0644:-m 0644:g" scripts/Makefile.fwinst
     fi
+    sed -i "s/(none)/${MACHINE}/" "${WORKDIR}/defconfig"
 }
 
 do_install_append() {

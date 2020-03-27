@@ -40,10 +40,6 @@ export KCFLAGS = "-Wno-error=misleading-indentation \
                   -Wno-error=stringop-overflow \
                   "
 
-do_configure_append(){
-    sed -i "s/(none)/${MACHINE}/" "${WORKDIR}/defconfig"
-}
-
 do_compile_append() {
     if test -n "${KERNEL_DEVICETREE}"; then
     	for DTB in ${KERNEL_DEVICETREE}; do
