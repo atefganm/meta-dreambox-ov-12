@@ -88,12 +88,5 @@ IMAGE_CMD_tar_prepend = "\
     zip ${IMAGE_NAME}_web.zip ${IMAGEDIR}/*; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.rootfs.tar.bz2; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.tar.bz2; \
-    rm -f ${DEPLOY_DIR_IMAGE}/*.manifest; \
     rm -Rf ${IMAGEDIR}; \
-    "
-
-IMAGE_CMD_tar_append = ";\
-    cd ${DEPLOY_DIR_IMAGE}; \
-    rm -f *.rootfs.manifest; \
-    rm -f .manifest; \
     "
