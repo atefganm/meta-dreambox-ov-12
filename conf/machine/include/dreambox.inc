@@ -1,6 +1,6 @@
 # dreambox.inc
 # We know about rtc
-MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
+MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
 EXTRA_IMAGEDEPENDS += "dreambox-secondstage-${MACHINE}"
 
