@@ -1,7 +1,6 @@
-SUMMARY = "Dream Multimedia Boot Splash Screen"
+SUMMARY = "Dreambox boot splash screen"
 SECTION = "base"
 PRIORITY = "required"
-MAINTAINER = "Dream Multimedia"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 LICENSE = "CLOSED"
 
