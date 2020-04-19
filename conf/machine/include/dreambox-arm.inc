@@ -75,7 +75,7 @@ IMAGEDIR = "${MACHINE}"
 
 IMAGE_CMD_tar_prepend = "\
     mkdir -p ${IMAGE_ROOTFS}/tmp; \
-    mkdir -p ${IMAGE_ROOTFS}/var/lib/opkg/info; \
+    mkdir -p ${IMAGE_ROOTFS}${localstatedir}/lib/opkg/info; \
     mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
     cp ${DEPLOY_DIR_IMAGE}/zImage ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${KERNEL_FILE}; \
     echo "${IMAGE_NAME}" > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
