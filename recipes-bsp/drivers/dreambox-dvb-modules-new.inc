@@ -44,7 +44,7 @@ do_install_append() {
     chmod 0644 ${D}${sysconfdir}/modules-load.d/10-${BPN}.conf
 }
 
-PACKAGES =+ "${PN}-lcd ${PN}-stb-core"
+PACKAGES += "${PN}-lcd ${PN}-stb-core"
 
 RDEPENDS_${PN} = "dreambox-secondstage-${MACHINE} kernel-${DM_LOCALVERSION} ${PN}-stb-core"
 RDEPENDS_${PN}_dm900 = "kernel-${KV}-${MACHINE} ${PN}-stb-core"

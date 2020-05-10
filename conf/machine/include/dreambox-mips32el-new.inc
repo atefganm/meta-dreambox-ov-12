@@ -21,7 +21,7 @@ MACHINE_EXTRA_RRECOMMENDS += "\
 
 DREAMBOX_IMAGE_SIZE ??= "1024"
 
-IMAGE_FSTYPES =+ "tar.xz"
+IMAGE_FSTYPES += "tar.xz"
 
 IMAGE_CMD_tar_prepend = "\
     mkdir -p ${IMAGE_ROOTFS}/tmp; \
