@@ -20,4 +20,8 @@ do_license() {
 	mv ${WORKDIR}/LICENSE-CLOSE ${B}/LICENSE-CLOSE
 }
 
+do_install_append() {
+	rm -f ${B}/LICENSE-CLOSE
+}
+
 addtask do_license before do_populate_lic after do_unpack
