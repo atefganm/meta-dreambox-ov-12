@@ -11,7 +11,7 @@ do_install() {
     oe_runmake install DESTDIR=${D}
 }
 
-PACKAGES += "flash-scripts ${PN}-autoflashd ${PN}-fbscaled"
+PACKAGES =+ "flash-scripts ${PN}-autoflashd ${PN}-fbscaled"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 

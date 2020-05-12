@@ -83,7 +83,7 @@ do_install_append() {
     oe_runmake headers_install INSTALL_HDR_PATH=${D}${exec_prefix}/src/linux-${KERNEL_VERSION} ARCH=$ARCH
 }
 
-PACKAGES += "${KERNEL_PACKAGE_NAME}-headers"
+PACKAGES =+ "${KERNEL_PACKAGE_NAME}-headers"
 FILES_${KERNEL_PACKAGE_NAME}-headers = "${exec_prefix}/src/linux*"
 
 KERNEL_MODULE_AUTOLOAD += "nfsd"

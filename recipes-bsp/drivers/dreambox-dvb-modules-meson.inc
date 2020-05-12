@@ -6,7 +6,7 @@ PRIORITY = "required"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-PACKAGES += "${PN}-firmware ${PN}-lcd ${PN}-stb-core"
+PACKAGES =+ "${PN}-firmware ${PN}-lcd ${PN}-stb-core"
 
 RDEPENDS_${PN} = "${PN}-stb-core"
 RDEPENDS_${PN}-firmware = "${PN}-firmware"
