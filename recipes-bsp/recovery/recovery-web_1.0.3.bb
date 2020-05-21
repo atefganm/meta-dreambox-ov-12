@@ -6,7 +6,6 @@ SRCREV_dm820 = "${SRCREV_dm7080}"
 SRCREV_dm900 = "046d365084e29c2dcacc0e9befd04f6947c6f7e3"
 SRCREV_dm920 = "${SRCREV_dm900}"
 SRCREV_dm7080 = "5fa8b020dde379faf3cec6142049f57c03fdb205"
-SRCREV_dreamone = "0e2fb0527d1cc25f034b9c4adcfd295940d05078"
 
 inherit opendreambox-git
 
@@ -16,6 +15,5 @@ BRANCH_dm820 = "${BRANCH_dm7080}"
 BRANCH_dm900 = "dm900"
 BRANCH_dm920 = "${BRANCH_dm900}"
 BRANCH_dm7080 = "dm7080"
-BRANCH_dreamone = "dreamone"
 
-COMPATIBLE_MACHINE = "^(dm520|dm820|dm900|dm920|dm7080|dreamone)$"
+COMPATIBLE_MACHINE = "^(dm520|dm820|dm900|dm920|dm7080)$"
