@@ -29,5 +29,5 @@ IMAGE_CMD_tar_prepend = "\
     echo "#!/bin/sh" > ${IMAGE_ROOTFS}${localstatedir}/lib/opkg/info/dreambox-secondstage.postinst; \
     echo "[ -n \"$D\" ] || flash-ssbl /usr/share/dreambox-secondstage/ssbl.bin" >> ${IMAGE_ROOTFS}${localstatedir}/lib/opkg/info/dreambox-secondstage.postinst; \
     chmod 777 ${IMAGE_ROOTFS}${localstatedir}/lib/opkg/info/dreambox-secondstage.postinst; \
-    rm -f ${DEPLOY_DIR_IMAGE}/.tar.xz; \
+    rm -f ${DEPLOY_DIR_IMAGE}/*.tar.xz; \
     "
