@@ -1,4 +1,4 @@
-inherit kernel machine_kernel_pr
+inherit kernel machine_kernel_pr samba_change_dialect
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
