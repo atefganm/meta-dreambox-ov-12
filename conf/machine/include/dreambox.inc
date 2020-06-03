@@ -10,7 +10,6 @@ KERNEL_MODULE_AUTOLOAD += "xfs"
 
 MACHINE_EXTRA_RRECOMMENDS += "\
 	gstreamer1.0-plugin-dvbmediasink \
-	kernel-module-cifs \
 	kernel-module-hmac \
 	kernel-module-md4 \
 	kernel-module-ecb \

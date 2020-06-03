@@ -29,14 +29,11 @@ require conf/machine/include/tune-cortexa15.inc
 MACHINE_EXTRA_RRECOMMENDS += "\
     gstreamer1.0-plugin-dvbmediasink \
     gstreamer1.0-libav \
-    kernel-module-cifs \
     kernel-module-autofs4 \
     kernel-module-hmac \
     kernel-module-md4 \
     kernel-module-ecb \
     kernel-module-fuse \
-    kernel-module-nfsd \
-    kernel-module-exportfs \
     kernel-module-snd-oss \
     kernel-module-snd-pcm-oss \
     "
