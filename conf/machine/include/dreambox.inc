@@ -20,7 +20,7 @@ MACHINE_EXTRA_RRECOMMENDS_append_dm8000 += "\
 	enigma2-plugin-drivers-network-ath5k \
 	"
 
-MACHINE_FEATURES += "alsa usbhost 3dtv switchoff dreambox"
+MACHINE_FEATURES += "alsa usbhost switchoff dreambox"
 
 PREFERRED_PROVIDER_virtual/bootloader = "dreambox-secondstage-${MACHINE}"
 PREFERRED_PROVIDER_virtual/kernel = "linux-dreambox"
