@@ -68,7 +68,6 @@ MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 DREAMBOX_IMAGE_SIZE ??= "1024"
 
 IMAGE_FSTYPES =+ "tar.bz2"
-IMAGEDIR = "${MACHINE}"
 
 IMAGE_CMD_tar_prepend = "\
     mkdir -p ${IMAGE_ROOTFS}/tmp; \
