@@ -49,7 +49,7 @@ KERNEL_MODULE_AUTOLOAD += "xfs"
 
 DISTRO_FEATURES_remove = "directfb gtk-directfb"
     
-MACHINE_FEATURES += "dreambox alsa usbhost switchoff blindscan-dvbs modem dvb-c blindscan-dvbc hdmicec recovery ci dvd usbconsole blindscan-tbs emmc"
+MACHINE_FEATURES += "dreambox alsa usbhost switchoff blindscan-dvbs modem dvb-c blindscan-dvbc hdmicec recovery ci dvd usbconsole blindscan-tbs emmc mmc"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-dreambox"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "dreambox-blindscan-utils"
