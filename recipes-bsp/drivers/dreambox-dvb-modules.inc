@@ -21,9 +21,9 @@ do_compile() {
 do_install() {
 	install -d ${D}${sysconfdir}/modules-load.d
 	install -m 0644 ${WORKDIR}/modules ${D}${sysconfdir}/modules-load.d/${PN}.conf
-	install -d ${D}/lib/modules/${DM_LOCALVERSION}/extra
-	install -m 0644 ${WORKDIR}/LICENSE ${D}/lib/modules/${DM_LOCALVERSION}/extra
-	install -m 0644 ${WORKDIR}/*.ko ${D}/lib/modules/${DM_LOCALVERSION}/extra
+	install -d ${D}${base_libdir}/modules/${DM_LOCALVERSION}/extra
+	install -m 0644 ${WORKDIR}/LICENSE ${D}${base_libdir}/modules/${DM_LOCALVERSION}/extra
+	install -m 0644 ${WORKDIR}/*.ko ${D}${base_libdir}/modules/${DM_LOCALVERSION}/extra
 }
 
 PACKAGES = "${PN}"
@@ -37,4 +37,4 @@ DRIVERDATE = "${@'${PV}'.split('-')[-1]}"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/dreambox-dvb-modules:"
 
-FILES_${PN} += "${sysconfdir}/modules-load.d/${PN}.conf /lib/modules/${DM_LOCALVERSION}/extra"
+FILES_${PN} += "${sysconfdir}/modules-load.d/${PN}.conf ${base_libdir}/modules/${DM_LOCALVERSION}/extra"
