@@ -6,8 +6,6 @@ RPROVIDES_${PN} += "virtual/blindscan-dvbs virtual/blindscan-dvbc"
 
 DEPENDS = "ncurses"
 
-COMPATIBLE_MACHINE = "^(dm500hd|dm500hdv2|dm520|dm800se|dm800sev2|dm820|dm900|dm920|dm7020hd|dm7080|dm8000)$"
-
 PV = "1.12"
 
 DREAMBOXURL = "http://dreamboxupdate.com/download/opendreambox"
