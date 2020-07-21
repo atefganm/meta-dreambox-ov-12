@@ -31,3 +31,5 @@ IMAGE_CMD_tar_prepend = "\
     chmod 777 ${IMAGE_ROOTFS}${localstatedir}/lib/opkg/info/dreambox-secondstage.postinst; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.tar.xz; \
     "
+
+STB_PLATFORM = "dm3gen"
