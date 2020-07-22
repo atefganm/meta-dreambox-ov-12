@@ -87,3 +87,5 @@ IMAGE_CMD_tar_prepend = "\
     "
 
 STB_PLATFORM = "dm4kgen"
+
+SOC_FAMILY = "bcm7252s"
