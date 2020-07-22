@@ -7,3 +7,5 @@ UBINIZE_VOLSIZE = "397MiB"
 UBINIZE_DATAVOLSIZE = "574MiB"
 
 STB_PLATFORM = "dm1gen"
+
+MACHINE_FEATURES += "modem dvb-c blindscan-dvbc hdmicec usbconsole HDMI SCART"

@@ -5,3 +5,5 @@ MKUBIFS_ARGS = "-m 512 -e 15KiB -c 3798 -x favor_lzo -X 1 -F -j 4MiB"
 UBINIZE_ARGS = "-m 512 -p 16KiB -s 512"
 
 STB_PLATFORM = "dm1gen"
+
+MACHINE_FEATURES += "fan modem dvb-c blindscan-dvbc hdmicec usbconsole smallflash HDMI SCART"
