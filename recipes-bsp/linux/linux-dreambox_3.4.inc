@@ -40,7 +40,7 @@ python populate_packages_prepend() {
 }
 
 # Do not use update-alternatives!
-pkg_postinst_kernel-image () {
+pkg_postinst_${KERNEL_PACKAGE_NAME}-image () {
 }
-pkg_postrm_kernel-image () {
+pkg_postrm_${KERNEL_PACKAGE_NAME}-image () {
 }

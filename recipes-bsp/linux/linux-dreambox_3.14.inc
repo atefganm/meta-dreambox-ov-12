@@ -20,7 +20,7 @@ RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image-${KERNEL_
 RDEPENDS_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-devicetree flash-scripts"
 
 
-pkg_postinst_kernel-image () {
+pkg_postinst_${KERNEL_PACKAGE_NAME}-image () {
 #!/bin/sh
 if [ -z "$D" ]; then
     flash-kernel /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${LINUX_VERSION}

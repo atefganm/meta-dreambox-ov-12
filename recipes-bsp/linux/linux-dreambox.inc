@@ -51,7 +51,7 @@ FILES_${KERNEL_PACKAGE_NAME}-image += "\
 	/${KERNEL_IMAGEDEST}/autoexec*.bat \
 	"
 
-pkg_preinst_kernel-image() {
+pkg_preinst_${KERNEL_PACKAGE_NAME}-image() {
 	if [ -z "$D" ]
 	then
 		if mountpoint -q /${KERNEL_IMAGEDEST}
@@ -62,7 +62,7 @@ pkg_preinst_kernel-image() {
 		fi
 	fi
 }
-pkg_prerm_kernel-image() {
+pkg_prerm_${KERNEL_PACKAGE_NAME}-image() {
 	if [ -z "$D" ]
 	then
 		if mountpoint -q /${KERNEL_IMAGEDEST}
@@ -73,7 +73,7 @@ pkg_prerm_kernel-image() {
 		fi
 	fi
 }
-pkg_postinst_kernel-image() {
+pkg_postinst_${KERNEL_PACKAGE_NAME}-image() {
         if [ -z "$D" ] && mountpoint -q /${KERNEL_IMAGEDEST}; then
                 if grep -q '\<root=/dev/mtdblock3\>' /proc/cmdline && grep -q '\<root=ubi0:rootfs\>' /boot/autoexec.bat; then
                         sed -ie 's!${CMDLINE_UBI}!${CMDLINE_JFFS2}!' /boot/autoexec.bat;
@@ -81,7 +81,7 @@ pkg_postinst_kernel-image() {
                 umount /${KERNEL_IMAGEDEST};
         fi
 }
-pkg_postrm_kernel-image() {
+pkg_postrm_${KERNEL_PACKAGE_NAME}-image () {
 	if [ -z "$D" ]
 	then
 		umount /${KERNEL_IMAGEDEST}
