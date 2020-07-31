@@ -16,10 +16,6 @@ MACHINE_EXTRA_RRECOMMENDS += "\
 	dreambox-boot-progress \
 	"
 
-MACHINE_EXTRA_RRECOMMENDS_append_dm8000 += "\
-	enigma2-plugin-drivers-network-ath5k \
-	"
-
 MACHINE_FEATURES += "alsa usbhost switchoff dreambox"
 
 PREFERRED_PROVIDER_virtual/bootloader = "dreambox-secondstage-${MACHINE}"
