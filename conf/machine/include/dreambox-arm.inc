@@ -29,11 +29,9 @@ require conf/machine/include/tune-cortexa15.inc
 MACHINE_EXTRA_RRECOMMENDS += "\
     gstreamer1.0-plugin-dvbmediasink \
     gstreamer1.0-libav \
-    kernel-module-autofs4 \
     kernel-module-hmac \
     kernel-module-md4 \
     kernel-module-ecb \
-    kernel-module-fuse \
     kernel-module-snd-oss \
     kernel-module-snd-pcm-oss \
     "
@@ -45,7 +43,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     flash-nrf52 \
     "
 
-KERNEL_MODULE_AUTOLOAD += "xfs"
 
 DISTRO_FEATURES_remove += "directfb gtk-directfb"
     

@@ -21,7 +21,6 @@ KERNEL_BUILTIN_MODULES_dm800sev2 = "\
 	kernel-module-stv0299 \
 	"
 KERNEL_BUILTIN_MODULES_dm7020hd = "\
-	kernel-module-fuse \
 	kernel-module-stv0299 \
 	"
 
