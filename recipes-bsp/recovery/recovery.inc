@@ -5,7 +5,7 @@ DEPENDS = "coreutils-native udev"
 
 inherit pkgconfig update-rc.d
 
-SRC_URI_append = ";branch=${BRANCH}"
+SRC_URI_append = " ;branch=${BRANCH}"
 
 do_install() {
     oe_runmake install DESTDIR=${D}
