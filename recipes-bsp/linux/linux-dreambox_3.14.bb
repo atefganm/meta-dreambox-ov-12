@@ -28,6 +28,7 @@ SRC_URI = " \
 	file://0015-log2-give-up-on-gcc-constant-optimizations.patch \
 	file://0016-uaccess-dont-mark-register-as-const.patch \
 	file://0017-makefile-silence-packed-not-aligned-warn.patch \
+	file://0018-remove-redundant-YYLOC-global-declaration-for-gcc10.patch \
 	file://defconfig \
 	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
 "
