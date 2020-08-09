@@ -31,7 +31,7 @@ SRC_URI = " \
 	file://0018-remove-redundant-YYLOC-global-declaration-for-gcc10.patch \
 	file://defconfig \
 	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
-"
+	"
 
 SRC_URI[kernel.md5sum] = "b621207b3f6ecbb67db18b13258f8ea8"
 SRC_URI[kernel.sha256sum] = "61558aa490855f42b6340d1a1596be47454909629327c49a5e4e10268065dffa"

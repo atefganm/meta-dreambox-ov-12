@@ -1,4 +1,4 @@
-KV = "3.4-4.0"
+KV = "${KERNELVERSION}-4.0"
 DRIVERDATE = "20180222"
 
 require dreambox-dvb-modules-new.inc

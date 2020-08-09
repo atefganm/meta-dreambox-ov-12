@@ -17,7 +17,6 @@ do_install() {
 
 FILES_${PN} += "${sysconfdir}/moddules-load.d/ath5k.conf"
 
-PV = "1.0"
 
 ALLOW_EMPTY_${PN} = "1"
 

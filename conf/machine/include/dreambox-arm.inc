@@ -1,5 +1,7 @@
 # dreambox-arm.inc
 
+KERNELVERSION = "3.14"
+
 BOX_BRAND = "dreambox"
 
 MTD_ROOTFS = "mmcblk0p2"
@@ -27,22 +29,21 @@ require conf/machine/include/soc-family.inc
 require conf/machine/include/tune-cortexa15.inc
 
 MACHINE_EXTRA_RRECOMMENDS += "\
-    gstreamer1.0-plugin-dvbmediasink \
-    gstreamer1.0-libav \
-    kernel-module-hmac \
-    kernel-module-md4 \
-    kernel-module-ecb \
-    kernel-module-snd-oss \
-    kernel-module-snd-pcm-oss \
-    "
+	gstreamer1.0-plugin-dvbmediasink \
+	gstreamer1.0-libav \
+	kernel-module-hmac \
+	kernel-module-md4 \
+	kernel-module-ecb \
+	kernel-module-snd-oss \
+	kernel-module-snd-pcm-oss \
+	"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-    dreambox-dvb-modules-${MACHINE} \
-    libpagecache \
-    libpassthrough \
-    flash-nrf52 \
-    "
-
+	dreambox-dvb-modules-${MACHINE} \
+	libpagecache \
+	libpassthrough \
+	flash-nrf52 \
+	"
 
 DISTRO_FEATURES_remove += "directfb gtk-directfb"
     
@@ -51,14 +52,13 @@ MACHINE_FEATURES += "dreambox alsa usbhost switchoff blindscan-dvbs modem dvb-c 
 PREFERRED_PROVIDER_virtual/kernel = "linux-dreambox"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "dreambox-blindscan-utils"
 PREFERRED_PROVIDER_virtual/blindscan-dvbc = "dreambox-blindscan-utils"
-PREFERRED_VERSION_linux-dreambox = "3.14"
+PREFERRED_VERSION_linux-dreambox = "${KERNELVERSION}"
 PREFERRED_PROVIDER_virtual/libgl ?= "mesa-gl"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa-gl"
-PREFERRED_VERSION_linux-dreambox = "3.14"
 
 TARGET_ARCH = "arm"
 DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
-OLDEST_KERNEL = "3.14"
+OLDEST_KERNEL = "${KERNELVERSION}"
 
 MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
