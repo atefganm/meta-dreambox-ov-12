@@ -32,12 +32,12 @@ do_install_append() {
     install -d ${D}${sysconfdir}/modules-load.d
     echo "stb-core" > ${D}${sysconfdir}/modules-load.d/01-${BPN}-stb-core.conf
     chmod 0644 ${D}${sysconfdir}/modules-load.d/01-${BPN}-stb-core.conf
-    if [ -f ${D}${base_libdir}/modules/${DM_LOCALVERSION}/extra/lcd.ko ]; then
+    if [ -f ${D}${nonarch_base_libdir}/modules/${DM_LOCALVERSION}/extra/lcd.ko ]; then
         echo "lcd" > ${D}${sysconfdir}/modules-load.d/02-${BPN}-lcd.conf
         chmod 0644 ${D}${sysconfdir}/modules-load.d/02-${BPN}-lcd.conf
     fi
     for module in ${BCMNUMBER} dreambox_keyboard ble; do
-        if [ -f ${D}${base_libdir}/modules/${DM_LOCALVERSION}/extra/$module.ko ]; then
+        if [ -f ${D}${nonarch_base_libdir}/modules/${DM_LOCALVERSION}/extra/$module.ko ]; then
             echo $module >> ${D}${sysconfdir}/modules-load.d/10-${BPN}.conf
         fi
     done
@@ -53,15 +53,15 @@ RDEPENDS_${PN}-lcd = "${PN}-stb-core"
 RRECOMMENDS_${PN} = "${PN}-lcd"
 
 FILES_${PN} = "${sysconfdir}/modules-load.d/10-${BPN}.conf \
-               ${base_libdir}/modules/${DM_LOCALVERSION}/extra/"
+               ${nonarch_base_libdir}/modules/${DM_LOCALVERSION}/extra/"
 
 FILES_${PN}-lcd = "${sysconfdir}/modules-load.d/02-${BPN}-lcd.conf \
-                   ${base_libdir}/modules/${DM_LOCALVERSION}/extra/lcd.ko"
+                   ${nonarch_base_libdir}/modules/${DM_LOCALVERSION}/extra/lcd.ko"
 
 FILES_${PN}-stb-core = "${sysconfdir}/modules-load.d/01-${BPN}-stb-core.conf \
-                        ${base_libdir}/modules/${DM_LOCALVERSION}/extra/stb-core.ko \
-                        ${base_libdir}/modules/${DM_LOCALVERSION}/extra/core/boxsec.ko \
-                        ${base_libdir}/modules/${DM_LOCALVERSION}/extra/stb/stb-core.ko"
+                        ${nonarch_base_libdir}/modules/${DM_LOCALVERSION}/extra/stb-core.ko \
+                        ${nonarch_base_libdir}/modules/${DM_LOCALVERSION}/extra/core/boxsec.ko \
+                        ${nonarch_base_libdir}/modules/${DM_LOCALVERSION}/extra/stb/stb-core.ko"
 
 # We don't use KERNEL_VERSION in this recipe, because the
 # precompiled modules depend on a specific version.
