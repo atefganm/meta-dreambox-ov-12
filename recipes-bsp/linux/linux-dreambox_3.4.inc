@@ -19,7 +19,7 @@ do_install_append() {
                 # Mark the kernel as executable, so it gets stripped during do_package.
                 chmod +x ${D}/${KERNEL_IMAGEDEST}/vmlinux-${LINUX_VERSION}
         fi
-        install -d ${D}/usr/src/kernel
+        install -d ${D}${prefix}/src/kernel
 }
 
 PACKAGES += "${KERNEL_PACKAGE_NAME}-image-dbg"
