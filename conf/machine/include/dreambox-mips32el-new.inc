@@ -37,3 +37,5 @@ IMAGE_CMD_tar_prepend = "\
 STB_PLATFORM = "dm3gen"
 
 MACHINE_FEATURES += "modem dvb-c blindscan-dvbc hdmicec recovery ci dvd usbconsole HDMI"
+
+RCNAME = "dmm2"

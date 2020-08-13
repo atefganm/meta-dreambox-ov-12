@@ -9,3 +9,5 @@ UBINIZE_DATAVOLSIZE = "569MiB"
 STB_PLATFORM = "dm2gen"
 
 MACHINE_FEATURES += "fan modem dvb-c blindscan-dvbc hdmicec usbconsole HDMI SCART"
+
+RCNAME = "dmm2"
