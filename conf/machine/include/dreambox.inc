@@ -4,10 +4,8 @@ MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
 EXTRA_IMAGEDEPENDS += "dreambox-secondstage-${MACHINE}"
 
-MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "dreambox-dvb-modules-${MACHINE}"
-
-
-MACHINE_EXTRA_RRECOMMENDS += "\
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
+	dreambox-dvb-modules-${MACHINE} \
 	gstreamer1.0-plugin-dvbmediasink \
 	kernel-module-hmac \
 	kernel-module-md4 \

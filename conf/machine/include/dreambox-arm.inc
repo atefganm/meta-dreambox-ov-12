@@ -28,7 +28,11 @@ DVBMEDIASINK_CONFIG = "--with-pcm --with-wma --with-wmv --with-dts=no --with-dts
 require conf/machine/include/soc-family.inc
 require conf/machine/include/tune-cortexa15.inc
 
-MACHINE_EXTRA_RRECOMMENDS += "\
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
+	dreambox-dvb-modules-${MACHINE} \
+	libpagecache \
+	libpassthrough \
+	flash-nrf52 \
 	gstreamer1.0-plugin-dvbmediasink \
 	gstreamer1.0-libav \
 	kernel-module-hmac \
@@ -36,13 +40,6 @@ MACHINE_EXTRA_RRECOMMENDS += "\
 	kernel-module-ecb \
 	kernel-module-snd-oss \
 	kernel-module-snd-pcm-oss \
-	"
-
-MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-	dreambox-dvb-modules-${MACHINE} \
-	libpagecache \
-	libpassthrough \
-	flash-nrf52 \
 	"
 
 DISTRO_FEATURES_remove += "directfb gtk-directfb"
