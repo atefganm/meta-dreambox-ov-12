@@ -9,7 +9,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	gstreamer1.0-plugin-dvbmediasink \
 	kernel-module-hmac \
 	kernel-module-md4 \
-	kernel-module-ecb \
+	${@bb.utils.contains_any("MACHINE", "dm8000 dm7020hd dm800sev2 dm800se dm500hdv2 dm500hd", "kernel-module-ecb", "", d)} \
 	dreambox-boot-progress \
 	"
 
