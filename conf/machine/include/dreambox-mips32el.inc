@@ -8,7 +8,7 @@ DEFAULTTUNE = "mips32el"
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	libpagecache \
 	libpassthrough \
-	${@bb.utils.contains_any("MACHINE", "dm500hd dm800se", "", "gstreamer1.0-libav", d)} \
+	gstreamer1.0-libav \
 	"
 
 MTD_KERNEL = "mtd2"
