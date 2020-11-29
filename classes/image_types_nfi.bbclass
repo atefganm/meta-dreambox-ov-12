@@ -1,4 +1,5 @@
 IMAGE_CMD_jffs2_prepend = " \
+	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
 	mkfs.jffs2 \
 		--root=${IMAGE_ROOTFS}/boot \
 		--compression-mode=none \
@@ -22,6 +23,7 @@ IMAGE_CMD_jffs2_prepend = " \
 "
 
 IMAGE_CMD_ubifs_prepend = " \
+	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
 	mkfs.jffs2 \
 		--root=${IMAGE_ROOTFS}/boot \
 		--compression-mode=none \

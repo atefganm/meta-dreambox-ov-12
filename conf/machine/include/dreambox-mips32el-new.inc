@@ -26,13 +26,14 @@ DREAMBOX_IMAGE_SIZE ??= "1024"
 IMAGE_FSTYPES =+ "tar.xz"
 
 IMAGE_CMD_tar_prepend = "\
-    mkdir -p ${IMAGE_ROOTFS}/tmp; \
-    mkdir -p ${IMAGE_ROOTFS}${localstatedir}/lib/opkg/info; \
-    echo "#!/bin/sh" > ${IMAGE_ROOTFS}${localstatedir}/lib/opkg/info/dreambox-secondstage.postinst; \
-    echo "[ -n \"$D\" ] || flash-ssbl /usr/share/dreambox-secondstage/ssbl.bin" >> ${IMAGE_ROOTFS}${localstatedir}/lib/opkg/info/dreambox-secondstage.postinst; \
-    chmod 777 ${IMAGE_ROOTFS}${localstatedir}/lib/opkg/info/dreambox-secondstage.postinst; \
-    rm -f ${DEPLOY_DIR_IMAGE}/*.tar.xz; \
-    "
+	mkdir -p ${IMAGE_ROOTFS}/tmp; \
+	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
+	mkdir -p ${IMAGE_ROOTFS}${localstatedir}/lib/opkg/info; \
+	echo "#!/bin/sh" > ${IMAGE_ROOTFS}${localstatedir}/lib/opkg/info/dreambox-secondstage.postinst; \
+	echo "[ -n \"$D\" ] || flash-ssbl /usr/share/dreambox-secondstage/ssbl.bin" >> ${IMAGE_ROOTFS}${localstatedir}/lib/opkg/info/dreambox-secondstage.postinst; \
+	chmod 777 ${IMAGE_ROOTFS}${localstatedir}/lib/opkg/info/dreambox-secondstage.postinst; \
+	rm -f ${DEPLOY_DIR_IMAGE}/*.tar.xz; \
+	"
 
 STB_PLATFORM = "dm3gen"
 
