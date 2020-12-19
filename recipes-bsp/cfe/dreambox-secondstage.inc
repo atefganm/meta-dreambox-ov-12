@@ -36,7 +36,7 @@ pkg_postinst_${PN}() {
 		if [ -f /tmp/secondstage-${MACHINE}.bin ]; then
 			flash_erase /dev/mtd1 0 0 2>/dev/null
 			nandwrite -m -n -o /dev/mtd1 /tmp/secondstage-${MACHINE}.bin 2>/dev/null
-			rm /tmp/secondstage-${MACHINE}.bin
+			rm -f /tmp/secondstage-${MACHINE}.bin
 		fi
 	fi
 }

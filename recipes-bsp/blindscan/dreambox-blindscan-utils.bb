@@ -36,7 +36,7 @@ SRC_URI[mips32el-krogoth.md5sum] = "185cd9490723728f39953348e322f5c7"
 SRC_URI[mips32el-krogoth.sha256sum] = "0458975ad8325355a5e9514fa4e3505f896298bdad7610718e090b640e3588c5"
 
 do_install() {
-    cp -r * ${D}
+    cp -fr * ${D}
 }
 
 INHIBIT_PACKAGE_STRIP = "1"
