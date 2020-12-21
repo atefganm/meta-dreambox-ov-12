@@ -18,7 +18,9 @@ IMAGE_CMD_jffs2_prepend = " \
 		--data-partition ${DREAMBOX_PART2_SIZE}:${IMGDEPLOYDIR}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.jffs2 \
 		> ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}.nfi; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
-	zip -j ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}_nfi.zip ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}.nfi; \
+	echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/imageversion; \
+	echo "https://forum.openvision.tech/app.php/donate" > ${DEPLOY_DIR_IMAGE}/donate.txt; \
+	zip -j ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}_nfi.zip ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}.nfi ${DEPLOY_DIR_IMAGE}/imageversion ${DEPLOY_DIR_IMAGE}/donate.txt; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.nfi; \
 "
 
@@ -63,7 +65,9 @@ IMAGE_CMD_ubifs_prepend = " \
 		--data-partition ${DREAMBOX_PART2_SIZE}:${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ubi \
 		> ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}.nfi; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
-	zip -j ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}_nfi.zip ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}.nfi; \
+	echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/imageversion; \
+	echo "https://forum.openvision.tech/app.php/donate" > ${DEPLOY_DIR_IMAGE}/donate.txt; \
+	zip -j ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}_nfi.zip ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}.nfi ${DEPLOY_DIR_IMAGE}/imageversion ${DEPLOY_DIR_IMAGE}/donate.txt; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.nfi; \
 "
 
