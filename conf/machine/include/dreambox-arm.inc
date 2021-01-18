@@ -33,8 +33,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	libpagecache \
 	libpassthrough \
 	flash-nrf52 \
-	gstreamer1.0-plugin-dvbmediasink \
-	gstreamer1.0-libav \
 	kernel-module-hmac \
 	kernel-module-md4 \
 	kernel-module-snd-pcm-oss \

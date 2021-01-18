@@ -8,7 +8,6 @@ DEFAULTTUNE = "mips32el"
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	libpagecache \
 	libpassthrough \
-	gstreamer1.0-libav \
 	"
 
 MTD_KERNEL = "mtd2"
