@@ -66,13 +66,23 @@ RDEPENDS_${PN}_append_dm520 = "\
     ${NANDRDEPENDS_recovery} \
 "
 
+RDEPENDS_${PN}_append_dreamone = "\
+    ${EMMCRDEPENDS_recovery} \
+    ${PN}-fbscaled \
+"
+
+RDEPENDS_${PN}_append_dreamtwo = "\
+    ${EMMCRDEPENDS_recovery} \
+    ${PN}-fbscaled \
+"
+
 RDEPENDS_flash-scripts = "\
     coreutils-realpath \
 "
 
 RDEPENDS_flash-scripts_append_dm820 = "\
     ${EMMCRDEPENDS_flash-scripts} \
-    mkbootblob \
+    ${FASTBOOTRDEPENDS_flash-scripts} \
 "
 
 RDEPENDS_flash-scripts_append_dm7080 = "\
@@ -90,6 +100,18 @@ RDEPENDS_flash-scripts_append_dm920 = "\
 
 RDEPENDS_flash-scripts_append_dm520 = "\
     ${NANDRDEPENDS_flash-scripts} \
+"
+
+RDEPENDS_flash-scripts_append_dreamone = "\
+    ${EMMCRDEPENDS_flash-scripts} \
+    android-tools \
+    u-boot-mkimage \
+"
+
+RDEPENDS_flash-scripts_append_dreamtwo = "\
+    ${EMMCRDEPENDS_flash-scripts} \
+    android-tools \
+    u-boot-mkimage \
 "
 
 #RRECOMMENDS_flash-scripts = "dreambox-dvb-modules-stb-core"

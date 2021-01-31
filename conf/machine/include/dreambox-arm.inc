@@ -32,7 +32,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	dreambox-dvb-modules-${MACHINE} \
 	libpagecache \
 	libpassthrough \
-	flash-nrf52 \
 	kernel-module-hmac \
 	kernel-module-md4 \
 	kernel-module-snd-pcm-oss \

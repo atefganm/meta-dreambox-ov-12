@@ -2,11 +2,10 @@ DESCRIPTION = "Dreambox box-specific configuration files"
 SECTION = "base"
 PRIORITY = "required"
 MAINTAINER = "PLi team"
-LICENSE = "WTFPL"
+LICENSE = "CLOSED"
 COMPATIBLE_MACHINE = "^(dm7020hd|dm8000)$"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=1b71aebc25e7533ebaa5b320a20e7ed2"
 
-SRC_URI = "file://skin_box.xml file://LICENSE"
+SRC_URI = "file://skin_box.xml"
 
 PACKAGES = "${PN}"
 
