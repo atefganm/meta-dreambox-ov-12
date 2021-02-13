@@ -86,9 +86,6 @@ EXTRA_ALSA = "${STB_PLATFORM}"
 
 MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc gobject-introspection-data"
 
-# MACHINE_FEATURES_BACKFILL_CONSIDERED += "pulseaudio"
-# DISTRO_FEATURES_append = " pulseaudio"
-
 DVBMEDIASINK_CONFIG = "--with-pcm --with-wma --with-wmv --with-dtsdownmix --with-eac3 --with-dts --with-vb6 --with-vb8 --with-spark --with-h265"
 
 IMAGE_FSTYPES =+ "tar.xz"
