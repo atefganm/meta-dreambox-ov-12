@@ -31,6 +31,8 @@ MACHINE_FEATURES = "dreambox hdmicec serial usbconsole usbgadget usbhost vfat ex
 BOX_BRAND = "dreambox"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
+	alsa-plugins \
+	alsa-plugins-pulseaudio-conf \
 	bcmdhd \
 	bcmdhd-firmware \
 	dm-precompiled \
