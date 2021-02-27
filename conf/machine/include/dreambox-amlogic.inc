@@ -103,3 +103,5 @@ ROOTFS_FILE = "rootfs.tar.xz"
 MTD_BLACK  = "mmcblk0"
 
 # EXTRA_IMAGEDEPENDS += "dreambox-rescue-image-${MACHINE}"
+
+IMAGE_CLASSES += "tarxz-dreambox"

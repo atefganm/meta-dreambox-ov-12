@@ -39,3 +39,5 @@ STB_PLATFORM = "dm3gen"
 MACHINE_FEATURES += "modem dvb-c blindscan-dvbc hdmicec recovery ci dvd usbconsole HDMI"
 
 RCNAME = "dmm2"
+
+IMAGE_CLASSES += "tarxz-dreambox"
