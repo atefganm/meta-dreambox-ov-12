@@ -34,9 +34,9 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	alsa-plugins \
 	alsa-plugins-pulseaudio-conf \
 	bcmdhd \
-	bcmdhd-firmware \
 	dm-precompiled \
 	dreambox-dvb-modules-${MACHINE} \
+	firmware-bcmdhd \
 	flash-scripts \
 	gstreamer1.0-dreamsinks \
 	kernel-modules \
