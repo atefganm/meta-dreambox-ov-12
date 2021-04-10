@@ -12,7 +12,7 @@ do_compile() {
 }
 
 do_install() {
-    install -d ${D}${sysconfdir}/init.d/
-    install -m 0755 ${WORKDIR}/dm-shutdown.sh ${D}${sysconfdir}/init.d/dm-shutdown
+    install -d ${D}${INIT_D_DIR}/
+    install -m 0755 ${WORKDIR}/dm-shutdown.sh ${D}${INIT_D_DIR}/dm-shutdown
 }
 

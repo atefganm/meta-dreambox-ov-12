@@ -40,7 +40,7 @@ ISSUE_TEXT .= ">>> then run 'help' to get further information.\n"
 ISSUE_TEXT .= "\n"
 
 tweak_initramfs() {
-        touch ${IMAGE_ROOTFS}${sysconfdir}/initrd-release
+        touch ${IMAGE_ROOTFS}${INIT_D_DIR}-release
         printf "${ISSUE_TEXT}" >> ${IMAGE_ROOTFS}${sysconfdir}/issue
         printf "${ISSUE_TEXT}" >> ${IMAGE_ROOTFS}${sysconfdir}/issue.net
 }

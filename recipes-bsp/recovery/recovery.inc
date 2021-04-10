@@ -117,12 +117,12 @@ RDEPENDS_flash-scripts_append_dreamtwo = "\
 #RRECOMMENDS_flash-scripts = "dreambox-dvb-modules-stb-core"
 
 FILES_${PN}-autoflashd = "\
-    ${sysconfdir}/init.d/autoflashd \
+    ${INIT_D_DIR}/autoflashd \
     ${sbindir}/autoflashd \
 "
 
 FILES_${PN}-fbscaled = "\
-    ${sysconfdir}/init.d/fbscaled \
+    ${INIT_D_DIR}/fbscaled \
     ${sbindir}/fbscaled \
 "
 

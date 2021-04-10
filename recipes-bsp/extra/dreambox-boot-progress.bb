@@ -14,9 +14,9 @@ do_install () {
 #
 # Create directories and install device independent scripts
 #
-	install -d ${D}${sysconfdir}/init.d
+	install -d ${D}${INIT_D_DIR}
 	install -d ${D}${sysconfdir}/rcS.d
-	install -m 0755 ${WORKDIR}/progress ${D}${sysconfdir}/init.d
+	install -m 0755 ${WORKDIR}/progress ${D}${INIT_D_DIR}
 #
 # Create runlevel links
 #
