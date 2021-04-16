@@ -19,7 +19,6 @@ PACKAGECONFIG_pn-cogl-1.0 = "egl-kms egl-null \
 
 PACKAGECONFIG_pn-weston = "${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'gles', '', d)}"
 
-DVBSKYPROVIDER = "kernel"
 
 GLIBC_EXTRA_OECONF = "--with-tls --with-__thread"
 
