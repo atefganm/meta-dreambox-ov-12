@@ -31,6 +31,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	dreambox-dvb-modules-${MACHINE} \
 	libpagecache \
 	libpassthrough \
+	libvc5dream \
 	kernel-module-bluetooth \
 	kernel-module-hmac \
 	kernel-module-md4 \
@@ -45,6 +46,9 @@ PREFERRED_PROVIDER_virtual/kernel = "linux-dreambox"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "dreambox-blindscan-utils"
 PREFERRED_PROVIDER_virtual/blindscan-dvbc = "dreambox-blindscan-utils"
 PREFERRED_VERSION_linux-dreambox = "${KERNELVERSION}"
+PREFERRED_PROVIDER_virtual/egl = "libvc5dream"
+PREFERRED_PROVIDER_virtual/libgles1 = "libvc5dream"
+PREFERRED_PROVIDER_virtual/libgles2 = "libvc5dream"
 PREFERRED_PROVIDER_virtual/libgl ?= "mesa-gl"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa-gl"
 
