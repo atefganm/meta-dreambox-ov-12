@@ -1,12 +1,17 @@
 DEPENDS = "libgcc"
-PROVIDES = "linux-dreambox"
 PE = "1"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-require recipes-bsp/linux/linux-dreambox-dmamlogic.inc
+COMPATIBLE_MACHINE = "^(dreamone|dreamtwo)$"
 
-SRC_URI = "https://dreamboxupdate.com/download/opendreambox/linux-meson64/linux-meson64-v${PV}.tar.xz \
+DMPV = "643147-ga9d00b3"
+
+MACHINE_KERNEL_PR = "${DMPV}-"
+
+require linux-dreambox-dmamlogic.inc
+
+SRC_URI = "https://dreamboxupdate.com/download/opendreambox/linux-meson64/linux-meson64-v${PV}-${DMPV}.tar.xz \
 	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
 	file://defconfig \
 	"
@@ -17,13 +22,12 @@ SRC_URI[sha256sum] = "5f50bceba8a06ddc9d59380ca8bef0b3d01a72cc5e941b3544efe8de72
 KERNEL_CC += "${TOOLCHAIN_OPTIONS}"
 KERNEL_LD += "${TOOLCHAIN_OPTIONS}"
 
-S = "${WORKDIR}/linux-meson64-v${PV}"
+S = "${WORKDIR}/linux-meson64-v${PV}-${DMPV}"
 
 CMDLINE = "logo=osd0,loaded,0x7f800000 vout=2160p50hz,enable hdmimode=2160p50hz fb_width=1280 fb_height=720 ${@kernel_console(d)} root=/dev/mmcblk0p7 rootwait rootfstype=ext4 no_console_suspend"
 
-COMPATIBLE_MACHINE = "^(dreamone|dreamtwo)$"
-
 # DEFCONFIG = "meson64"
+UBOOT_MACHINE = "meson64"
 
 LINUX_VERSION = "4.9"
 KERNEL_IMAGETYPES = "Image.gz"

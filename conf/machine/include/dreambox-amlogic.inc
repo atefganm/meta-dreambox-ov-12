@@ -19,7 +19,7 @@ PREFERRED_PROVIDER_virtual/blindscan-dvbs = "dreambox-blindscan-utils"
 PREFERRED_PROVIDER_virtual/blindscan-dvbc = "dreambox-blindscan-utils"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-dmamlogic"
-PREFERRED_VERSION_linux-dmamlogic = "4.9%"
+PREFERRED_VERSION_linux-dmamlogic = "${KERNELVERSION}"
 
 UBOOT_ENTRYPOINT = "0x1080000"
 
@@ -45,8 +45,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	nrf52-firmware-${MACHINE} \
 	u-boot-bin \
 	"
-
-# MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "pulseaudio"
 
 KERNEL_MODULE_AUTOLOAD += "\
 	mali_kbase \
@@ -78,9 +76,6 @@ KERNEL_MODULE_AUTOLOAD += "\
 	amvdec_vp9 \
 	"
 
-# CC_append_pn-showiframe = " -DHAVE_AMLOGIC -I${STAGING_INCDIR}/amlogic/amcodec -lamcodec"
-# DEPENDS_append_pn-showiframe = " amlogic-libamcodec"
-
 STB_PLATFORM = "dmamlogic"
 
 RCNAME = "dmm2"
@@ -104,7 +99,5 @@ MTD_KERNEL = "mmcblk0p6"
 KERNEL_FILE = "kernel.bin"
 ROOTFS_FILE = "rootfs.tar.xz"
 MTD_BLACK  = "mmcblk0"
-
-# EXTRA_IMAGEDEPENDS += "dreambox-rescue-image-${MACHINE}"
 
 IMAGE_CLASSES += "tarxz-dreambox"
