@@ -40,7 +40,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 
 DISTRO_FEATURES_remove += "directfb gtk-directfb"
     
-MACHINE_FEATURES += "dreambox alsa usbhost switchoff blindscan-dvbs modem dvb-c blindscan-dvbc hdmicec recovery ci dvd usbconsole blindscan-tbs emmc mmc HDMI HDMI-IN-FHD"
+MACHINE_FEATURES += "dreambox alsa usbhost switchoff blindscan-dvbs modem dvb-c blindscan-dvbc hdmicec recovery ci usbconsole blindscan-tbs emmc mmc HDMI HDMI-IN-FHD"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-dreambox"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "dreambox-blindscan-utils"
