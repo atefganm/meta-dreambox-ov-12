@@ -4,9 +4,9 @@ KERNELVERSION = "3.4"
 
 BOX_BRAND = "dreambox"
 
-PREFERRED_PROVIDER_virtual/egl = "libvc5dream"
-PREFERRED_PROVIDER_virtual/libgles1 = "libvc5dream"
-PREFERRED_PROVIDER_virtual/libgles2 = "libvc5dream"
+PREFERRED_PROVIDER_virtual/egl ?= "libvc5dream"
+PREFERRED_PROVIDER_virtual/libgles1 ?= "libvc5dream"
+PREFERRED_PROVIDER_virtual/libgles2 ?= "libvc5dream"
 PREFERRED_PROVIDER_virtual/libgl ?= "mesa-gl"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa-gl"
 PREFERRED_VERSION_linux-dreambox = "${KERNELVERSION}"
@@ -45,3 +45,5 @@ MACHINE_FEATURES += "modem dvb-c blindscan-dvbc hdmicec recovery ci usbconsole H
 RCNAME = "dmm2"
 
 IMAGE_CLASSES += "tarxz-dreambox"
+
+KODIEXTSETTINGS = ""
