@@ -10,15 +10,6 @@ KERNEL_FILE = "kernel.bin"
 ROOTFS_FILE = "rootfs.tar.bz2"
 MTD_BLACK  = "mmcblk0"
 
-DISTRO_FEATURES_GFX_mipsel ?= " opengl"
-
-PACKAGECONFIG_pn-glmark2 = "gles2"
-
-PACKAGECONFIG_pn-cogl-1.0 = "egl-kms egl-null \
-        ${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'gles2', '', d)}"
-
-PACKAGECONFIG_pn-weston = "${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'gles', '', d)}"
-
 GLIBC_EXTRA_OECONF = "--with-tls --with-__thread"
 
 DVBMEDIASINK_CONFIG = "--with-pcm --with-wma --with-wmv --with-dts=no --with-dtsdownmix --with-eac3 --with-vb6 --with-vb8 --with-vb9 --with-spark --with-h265"
@@ -37,7 +28,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	kernel-module-snd-pcm-oss \
 	"
 
-    
 MACHINE_FEATURES += "dreambox alsa usbhost switchoff blindscan-dvbs modem dvb-c blindscan-dvbc hdmicec recovery ci usbconsole blindscan-tbs emmc mmc HDMI HDMI-IN-FHD"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-dreambox"
@@ -49,6 +39,8 @@ PREFERRED_PROVIDER_virtual/libgles1 ?= "libvc5dream"
 PREFERRED_PROVIDER_virtual/libgles2 ?= "libvc5dream"
 PREFERRED_PROVIDER_virtual/libgl ?= "mesa-gl"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa-gl"
+PREFERRED_PROVIDER_jpeg ?= "libjpeg-turbo"
+PREFERRED_PROVIDER_jpeg-native ?= "libjpeg-turbo-native"
 
 TARGET_ARCH = "arm"
 DEFAULTTUNE = "cortexa15hf-neon-vfpv4"

@@ -5,7 +5,9 @@ RPROVIDES_${PN} += "virtual/kodi"
 PROVIDES += "kodi"
 RPROVIDES_${PN} += "kodi"
 
-EXTRA_OECMAKE += " \
-    -DWITH_PLATFORM=dreambox-mipsel \
-    -DWITH_FFMPEG=stb \
+DEPENDS_append = " amlogic-libamadec amlogic-libamcodec amlogic-libamavutils"
+
+EXTRA_OECONF += " \
+    --with-platform=aml-aarch64 \
+    --with-ffmpeg=stb \
 "

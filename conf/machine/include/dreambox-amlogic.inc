@@ -10,16 +10,16 @@ require conf/machine/include/soc-family.inc
 
 SERIAL_CONSOLES = "1000000;ttyS0"
 
-PREFERRED_PROVIDER_virtual/egl = "meson-mali"
-PREFERRED_PROVIDER_virtual/libgles2 = "meson-mali"
-PREFERRED_PROVIDER_virtual/libgl = "mesa-gl"
-PREFERRED_PROVIDER_virtual/mesa = "mesa-gl"
-
+PREFERRED_PROVIDER_virtual/egl ?= "meson-mali"
+PREFERRED_PROVIDER_virtual/libgles2 ?= "meson-mali"
+PREFERRED_PROVIDER_virtual/libgl ?= "mesa-gl"
+PREFERRED_PROVIDER_virtual/mesa ?= "mesa-gl"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "dreambox-blindscan-utils"
 PREFERRED_PROVIDER_virtual/blindscan-dvbc = "dreambox-blindscan-utils"
-
 PREFERRED_PROVIDER_virtual/kernel = "linux-dmamlogic"
 PREFERRED_VERSION_linux-dmamlogic = "${KERNELVERSION}"
+PREFERRED_PROVIDER_jpeg ?= "libjpeg-turbo"
+PREFERRED_PROVIDER_jpeg-native ?= "libjpeg-turbo-native"
 
 UBOOT_ENTRYPOINT = "0x1080000"
 

@@ -10,15 +10,8 @@ PREFERRED_PROVIDER_virtual/libgles2 ?= "libvc5dream"
 PREFERRED_PROVIDER_virtual/libgl ?= "mesa-gl"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa-gl"
 PREFERRED_VERSION_linux-dreambox = "${KERNELVERSION}"
-
-DISTRO_FEATURES_GFX_mipsel ?= " opengl"
-
-PACKAGECONFIG_pn-glmark2 = "gles2"
-
-PACKAGECONFIG_pn-cogl-1.0 = "egl-kms egl-null \
-        ${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'gles2', '', d)}"
-
-PACKAGECONFIG_pn-weston = "${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'gles', '', d)}"
+PREFERRED_PROVIDER_jpeg ?= "libjpeg-turbo"
+PREFERRED_PROVIDER_jpeg-native ?= "libjpeg-turbo-native"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	libvc5dream \
