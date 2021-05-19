@@ -5,7 +5,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(dreamone|dreamtwo)$"
 
-DMPV = "643147-ga9d00b3"
+DMPV = "643173-gbc82830"
 
 MACHINE_KERNEL_PR = "${DMPV}-"
 
@@ -16,8 +16,8 @@ SRC_URI = "https://dreamboxupdate.com/download/opendreambox/linux-meson64/linux-
 	file://defconfig \
 	"
 
-SRC_URI[md5sum] = "0d90b1207d1029c14799e3659d870aed"
-SRC_URI[sha256sum] = "5f50bceba8a06ddc9d59380ca8bef0b3d01a72cc5e941b3544efe8de72d8ad01"
+SRC_URI[md5sum] = "37148b0e24aca6a31a92492fc9694c77"
+SRC_URI[sha256sum] = "764f08ecdf1e62be49781d04a81c38599fe84b0b28301d01aacaa43e3b7d14c1"
 
 KERNEL_CC += "${TOOLCHAIN_OPTIONS}"
 KERNEL_LD += "${TOOLCHAIN_OPTIONS}"
