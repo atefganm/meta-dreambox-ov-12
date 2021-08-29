@@ -34,7 +34,7 @@ KERNEL_IMAGETYPES = "Image.gz"
 
 export KCFLAGS = "-Wno-error"
 
-do_compile_append() {
+do_compile:append() {
     if test -n "${KERNEL_DEVICETREE}"; then
     	for DTB in ${KERNEL_DEVICETREE}; do
     		if echo ${DTB} | grep -q '/dts/'; then

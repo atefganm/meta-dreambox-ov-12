@@ -1,4 +1,4 @@
-DEPENDS_append = " android-tools-native"
+DEPENDS:append = " android-tools-native"
 
 do_fetch[noexec] = "1"
 do_unpack[noexec] = "1"

@@ -4,12 +4,12 @@ LICENSE = "CLOSED"
 DEPENDS = "libmnl xz"
 
 SRCREV = "1cd69394b3702a06cadfce078289dd351a07b152"
-SRCREV_dm820 = "${SRCREV_dm7080}"
-SRCREV_dm7080 = "ed7dd69f2d24c040b2a4ebfbeeb63135132abde7"
-SRCREV_dreamone = "${SRCREV_dm7080}"
-SRCREV_dreamtwo = "${SRCREV_dm7080}"
+SRCREV:dm820 = "${SRCREV:dm7080}"
+SRCREV:dm7080 = "ed7dd69f2d24c040b2a4ebfbeeb63135132abde7"
+SRCREV:dreamone = "${SRCREV:dm7080}"
+SRCREV:dreamtwo = "${SRCREV:dm7080}"
 
-SRC_URI_append = ";branch=${BRANCH}"
+SRC_URI:append = ";branch=${BRANCH}"
 
 inherit opendreambox-git pkgconfig update-rc.d
 
@@ -19,7 +19,7 @@ do_install() {
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-#RRECOMMENDS_${PN} = "dreambox-dvb-modules-${MACHINE}-lcd"
+#RRECOMMENDS:${PN} = "dreambox-dvb-modules-${MACHINE}-lcd"
 
 BRANCH = "master"
 BRANCH_dm7080 = "dm7080"

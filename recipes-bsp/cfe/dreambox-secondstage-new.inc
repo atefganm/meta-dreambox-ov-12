@@ -16,5 +16,5 @@ do_install() {
     install -m 0644 ${S}${datadir}/dreambox-secondstage/ssbl.bin ${D}${datadir}/dreambox-secondstage/ssbl.bin
 }
 
-RDEPENDS_${PN} = "flash-scripts"
-FILES_${PN} = "${datadir}/dreambox-secondstage/ssbl.bin"
+RDEPENDS:${PN} = "flash-scripts"
+FILES:${PN} = "${datadir}/dreambox-secondstage/ssbl.bin"

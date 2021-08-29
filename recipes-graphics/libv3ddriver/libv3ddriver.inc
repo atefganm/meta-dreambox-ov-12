@@ -1,6 +1,6 @@
 SUMMARY = "Broadcom V3D driver"
 
-FILES_${PN} = "${libdir}/lib*${SOLIBSDEV}"
-FILES_${PN}-dev = "${includedir}"
+FILES:${PN} = "${libdir}/lib*${SOLIBSDEV}"
+FILES:${PN}-dev = "${includedir}"
 
 EXCLUDE_FROM_WORLD = "1"

@@ -5,10 +5,10 @@ require linux_3.4.inc
 # package names instead, to allow only one kernel to be installed.
 PKG_${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-base"
 PKG_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image"
-RPROVIDES_${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-${LINUX_VERSION}"
-RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-${LINUX_VERSION}"
+RPROVIDES:${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-${LINUX_VERSION}"
+RPROVIDES:${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-${LINUX_VERSION}"
 
-do_install_append() {
+do_install:append() {
         if [ "${KERNEL_IMAGETYPE}" = "vmlinux" ]; then
                 # We want a stripped kernel that gets gzipped and booted from and
                 # an unstripped version for debugging, which will get into the
@@ -24,10 +24,10 @@ do_install_append() {
 
 PACKAGES += "${KERNEL_PACKAGE_NAME}-image-dbg"
 
-FILES_${KERNEL_PACKAGE_NAME}-image-dbg = "/${KERNEL_IMAGEDEST}/.debug"
-FILES_${KERNEL_PACKAGE_NAME}-vmlinux = "/boot/vmlinux-${LINUX_VERSION}"
+FILES:${KERNEL_PACKAGE_NAME}-image-dbg = "/${KERNEL_IMAGEDEST}/.debug"
+FILES:${KERNEL_PACKAGE_NAME}-vmlinux = "/boot/vmlinux-${LINUX_VERSION}"
 
-python populate_packages_prepend() {
+python populate_packages:prepend() {
     import shutil
     imagetype = d.getVar('KERNEL_IMAGETYPE', True)
     if imagetype == "vmlinux":
@@ -40,7 +40,7 @@ python populate_packages_prepend() {
 }
 
 # Do not use update-alternatives!
-pkg_postinst_${KERNEL_PACKAGE_NAME}-image () {
+pkg_postinst:${KERNEL_PACKAGE_NAME}-image () {
 }
-pkg_postrm_${KERNEL_PACKAGE_NAME}-image () {
+pkg_postrm:${KERNEL_PACKAGE_NAME}-image () {
 }

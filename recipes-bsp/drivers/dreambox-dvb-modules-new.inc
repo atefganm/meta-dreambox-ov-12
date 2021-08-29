@@ -27,7 +27,7 @@ do_install() {
 	chown -hR root:root ${D}
 }
 
-do_install_append() {
+do_install:append() {
 	install -d ${D}${sysconfdir}/modules-load.d
 	echo "stb-core" > ${D}${sysconfdir}/modules-load.d/01-dreambox-dvb-modules-stb-core.conf
 	if [ -f ${D}${nonarch_base_libdir}/modules/${DM_LOCALVERSION}/extra/lcd.ko ]; then
@@ -40,18 +40,18 @@ do_install_append() {
 	done
 }
 
-RDEPENDS_${PN} = "dreambox-secondstage-${MACHINE} kernel-${DM_LOCALVERSION}"
-RDEPENDS_${PN}_dm900 = "kernel-${KV}-${MACHINE}"
-RDEPENDS_${PN}_dm920 = "kernel-${KV}-${MACHINE}"
+RDEPENDS:${PN} = "dreambox-secondstage-${MACHINE} kernel-${DM_LOCALVERSION}"
+RDEPENDS:${PN}:dm900 = "kernel-${KV}-${MACHINE}"
+RDEPENDS:${PN}:dm920 = "kernel-${KV}-${MACHINE}"
 
-FILES_${PN} = "${sysconfdir}/modules-load.d ${nonarch_base_libdir}/modules/${DM_LOCALVERSION}/extra"
+FILES:${PN} = "${sysconfdir}/modules-load.d ${nonarch_base_libdir}/modules/${DM_LOCALVERSION}/extra"
 
 # We don't use KERNEL_VERSION in this recipe, because the
 # precompiled modules depend on a specific version.
 DM_LOCALVERSION = "${@'-'.join('${PV}'.split('-')[:-1])}-${MACHINE}"
 DRIVERDATE = "${@'${PV}'.split('-')[-1]}"
 
-pkg_postinst_${PN} () {
+pkg_postinst:${PN} () {
 if [ -z "$D" ]; then
 	depmod -a ${DM_LOCALVERSION}
 fi

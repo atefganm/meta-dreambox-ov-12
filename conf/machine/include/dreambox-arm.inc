@@ -15,7 +15,7 @@ GLIBC_EXTRA_OECONF = "--with-tls --with-__thread"
 DVBMEDIASINK_CONFIG = "--with-pcm --with-wma --with-wmv --with-dts=no --with-dtsdownmix --with-eac3 --with-vb6 --with-vb8 --with-vb9 --with-spark --with-h265"
 
 require conf/machine/include/soc-family.inc
-require conf/machine/include/tune-cortexa15.inc
+require conf/machine/include/arm/armv7a/tune-cortexa15.inc
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	dreambox-dvb-modules-${MACHINE} \
@@ -52,7 +52,7 @@ DREAMBOX_IMAGE_SIZE ??= "1024"
 
 IMAGE_FSTYPES =+ "tar.bz2"
 
-IMAGE_CMD_tar_prepend = "\
+IMAGE_CMD:tar:prepend = "\
 	mkdir -p ${IMAGE_ROOTFS}/tmp; \
 	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
 	mkdir -p ${IMAGE_ROOTFS}${localstatedir}/lib/opkg/info; \

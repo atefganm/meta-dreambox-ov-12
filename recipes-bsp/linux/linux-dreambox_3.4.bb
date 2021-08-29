@@ -31,7 +31,7 @@ SRC_URI[dream-patch.sha256sum] = "5ed3938ec088a868bcd344fd03adedbcefc5198c5255bd
 S = "${WORKDIR}/linux-${PV}"
 B = "${WORKDIR}/build"
 
-do_configure_prepend() {
+do_configure:prepend() {
         sed -e "/^SUBLEVEL = /d" -i ${S}/Makefile
 }
 
@@ -56,9 +56,9 @@ KERNEL_ALT_IMAGETYPE_dm7080 = "vmlinux.bin"
 
 KERNEL_ENABLE_CGROUPS = "1"
 
-RDEPENDS_${KERNEL_PACKAGE_NAME}-image = "flash-scripts"
+RDEPENDS:${KERNEL_PACKAGE_NAME}-image = "flash-scripts"
 
-pkg_postinst_${KERNEL_PACKAGE_NAME}-image () {
+pkg_postinst:${KERNEL_PACKAGE_NAME}-image () {
 #!/bin/sh
 if [ -z "$D" ]; then
     flash-kernel /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${LINUX_VERSION}

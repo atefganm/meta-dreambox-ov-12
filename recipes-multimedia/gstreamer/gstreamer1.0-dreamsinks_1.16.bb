@@ -6,7 +6,7 @@ SRC_URI[aarch64.sha256sum] = "12de5d5c29d1d7d95ff3b93717c9dbd68d4941ce79b56efea4
 
 inherit opendreambox-precompiled-binary-new
 
-FILES_${PN} = "${libdir}/gstreamer-1.0/*.so"
+FILES:${PN} = "${libdir}/gstreamer-1.0/*.so"
 
 COMPATIBLE_MACHINE = "^(dreamone|dreamtwo)$"
 

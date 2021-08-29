@@ -15,9 +15,9 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 PRECOMPILED_ARCH_dm920 = "dm900"
 
-#RRECOMMENDS_${PN} = "dreambox-dvb-modules-${MACHINE}-lcd"
+#RRECOMMENDS:${PN} = "dreambox-dvb-modules-${MACHINE}-lcd"
 
-RPROVIDES_${PN} = "recovery-ui"
+RPROVIDES:${PN} = "recovery-ui"
 
 INITSCRIPT_NAME = "recovery-ui"
 

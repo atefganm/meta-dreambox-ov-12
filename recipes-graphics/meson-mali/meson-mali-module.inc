@@ -4,7 +4,7 @@ LIC_FILES_CHKSUM = "file://${GPU_MODEL}/${GPU_VERSION}/kernel/license.txt;md5=13
 
 inherit module-base
 
-SRC_URI_append = " file://0001-${GPU_MODEL}-${GPU_VERSION}-compile-fix-for-dreambox-kernel.patch"
+SRC_URI:append = " file://0001-${GPU_MODEL}-${GPU_VERSION}-compile-fix-for-dreambox-kernel.patch"
 
 GPU_MODEL = "${@d.getVar('BPN').split('-')[-2]}"
 GPU_VERSION = "${@d.getVar('BPN').split('-')[-1]}"
@@ -36,10 +36,10 @@ do_install() {
     chmod 0644 ${D}${sysconfdir}/modules-load.d/00-${BPN}.conf
 }
 
-FILES_${PN} = "${sysconfdir}/modules-load.d \
+FILES:${PN} = "${sysconfdir}/modules-load.d \
                /lib/modules/${KERNEL_VERSION}/extra"
 
-pkg_postinst_${PN} () {
+pkg_postinst:${PN} () {
 if [ -z "$D" ]; then
         depmod -a ${KERNEL_VERSION}
 fi

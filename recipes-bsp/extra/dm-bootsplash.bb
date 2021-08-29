@@ -30,14 +30,14 @@ do_install() {
 
 inherit deploy
 
-pkg_postinst_${PN}() {
+pkg_postinst:${PN}() {
 	if [ -z "$D" ]
 	then
 		umount /boot
 	fi
 }
 
-pkg_prerm_${PN}() {
+pkg_prerm:${PN}() {
 	if [ -z "$D" ]
 	then
 		if mountpoint -q /boot
@@ -49,11 +49,11 @@ pkg_prerm_${PN}() {
 	fi
 }
 
-pkg_postrm_${PN}() {
+pkg_postrm:${PN}() {
 	if [ -z "$D" ]
 	then
 		umount /boot
 	fi
 }
 
-FILES_${PN} = "/boot"
+FILES:${PN} = "/boot"

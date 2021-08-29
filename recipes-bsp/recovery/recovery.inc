@@ -5,7 +5,7 @@ DEPENDS = "coreutils-native udev"
 
 inherit pkgconfig update-rc.d
 
-SRC_URI_append = ";branch=${BRANCH}"
+SRC_URI:append = ";branch=${BRANCH}"
 
 do_install() {
     oe_runmake install DESTDIR=${D}
@@ -15,29 +15,29 @@ PACKAGES =+ "flash-scripts ${PN}-autoflashd ${PN}-fbscaled"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-EMMCRDEPENDS_recovery = " \
+EMMCRDEPENDS:recovery = " \
     e2fsprogs-mke2fs \
     gptfdisk \
 "
 
-EMMCRDEPENDS_flash-scripts = " \
+EMMCRDEPENDS:flash-scripts = " \
     util-linux-sfdisk \
 "
 
-NANDRDEPENDS_recovery = " \
+NANDRDEPENDS:recovery = " \
     mtd-utils-ubifs \
 "
 
-NANDRDEPENDS_flash-scripts = " \
+NANDRDEPENDS:flash-scripts = " \
     mtd-utils \
 "
 
-FASTBOOTRDEPENDS_flash-scripts = " \
+FASTBOOTRDEPENDS:flash-scripts = " \
     fastboot \
     mkbootblob \
 "
 
-RDEPENDS_${PN} = "\
+RDEPENDS:${PN} = "\
     ${PN}-autoflashd \
     flash-scripts \
     gpgv \
@@ -46,87 +46,87 @@ RDEPENDS_${PN} = "\
     util-linux-mount \
 "
 
-RDEPENDS_${PN}_append_dm820 = "\
-    ${EMMCRDEPENDS_recovery} \
+RDEPENDS:${PN}:append:dm820 = "\
+    ${EMMCRDEPENDS:recovery} \
 "
 
-RDEPENDS_${PN}_append_dm7080 = "\
-    ${EMMCRDEPENDS_recovery} \
+RDEPENDS:${PN}:append:dm7080 = "\
+    ${EMMCRDEPENDS:recovery} \
 "
 
-RDEPENDS_${PN}_append_dm900 = "\
-    ${EMMCRDEPENDS_recovery} \
+RDEPENDS:${PN}:append:dm900 = "\
+    ${EMMCRDEPENDS:recovery} \
 "
 
-RDEPENDS_${PN}_append_dm920 = "\
-    ${EMMCRDEPENDS_recovery} \
+RDEPENDS:${PN}:append:dm920 = "\
+    ${EMMCRDEPENDS:recovery} \
 "
 
-RDEPENDS_${PN}_append_dm520 = "\
-    ${NANDRDEPENDS_recovery} \
+RDEPENDS:${PN}:append:dm520 = "\
+    ${NANDRDEPENDS:recovery} \
 "
 
-RDEPENDS_${PN}_append_dreamone = "\
-    ${EMMCRDEPENDS_recovery} \
+RDEPENDS:${PN}:append:dreamone = "\
+    ${EMMCRDEPENDS:recovery} \
     ${PN}-fbscaled \
 "
 
-RDEPENDS_${PN}_append_dreamtwo = "\
-    ${EMMCRDEPENDS_recovery} \
+RDEPENDS:${PN}:append:dreamtwo = "\
+    ${EMMCRDEPENDS:recovery} \
     ${PN}-fbscaled \
 "
 
-RDEPENDS_flash-scripts = "\
+RDEPENDS:flash-scripts = "\
     coreutils-realpath \
 "
 
-RDEPENDS_flash-scripts_append_dm820 = "\
-    ${EMMCRDEPENDS_flash-scripts} \
-    ${FASTBOOTRDEPENDS_flash-scripts} \
+RDEPENDS:flash-scripts:append:dm820 = "\
+    ${EMMCRDEPENDS:flash-scripts} \
+    ${FASTBOOTRDEPENDS:flash-scripts} \
 "
 
-RDEPENDS_flash-scripts_append_dm7080 = "\
-    ${EMMCRDEPENDS_flash-scripts} \
-    ${FASTBOOTRDEPENDS_flash-scripts} \
+RDEPENDS:flash-scripts:append:dm7080 = "\
+    ${EMMCRDEPENDS:flash-scripts} \
+    ${FASTBOOTRDEPENDS:flash-scripts} \
 "
 
-RDEPENDS_flash-scripts_append_dm900 = "\
-    ${EMMCRDEPENDS_flash-scripts} \
+RDEPENDS:flash-scripts:append:dm900 = "\
+    ${EMMCRDEPENDS:flash-scripts} \
 "
 
-RDEPENDS_flash-scripts_append_dm920 = "\
-    ${EMMCRDEPENDS_flash-scripts} \
+RDEPENDS:flash-scripts:append:dm920 = "\
+    ${EMMCRDEPENDS:flash-scripts} \
 "
 
-RDEPENDS_flash-scripts_append_dm520 = "\
-    ${NANDRDEPENDS_flash-scripts} \
+RDEPENDS:flash-scripts:append:dm520 = "\
+    ${NANDRDEPENDS:flash-scripts} \
 "
 
-RDEPENDS_flash-scripts_append_dreamone = "\
-    ${EMMCRDEPENDS_flash-scripts} \
+RDEPENDS:flash-scripts:append:dreamone = "\
+    ${EMMCRDEPENDS:flash-scripts} \
     android-tools \
     u-boot-mkimage \
 "
 
-RDEPENDS_flash-scripts_append_dreamtwo = "\
-    ${EMMCRDEPENDS_flash-scripts} \
+RDEPENDS:flash-scripts:append:dreamtwo = "\
+    ${EMMCRDEPENDS:flash-scripts} \
     android-tools \
     u-boot-mkimage \
 "
 
-#RRECOMMENDS_flash-scripts = "dreambox-dvb-modules-stb-core"
+#RRECOMMENDS:flash-scripts = "dreambox-dvb-modules-stb-core"
 
-FILES_${PN}-autoflashd = "\
+FILES:${PN}-autoflashd = "\
     ${INIT_D_DIR}/autoflashd \
     ${sbindir}/autoflashd \
 "
 
-FILES_${PN}-fbscaled = "\
+FILES:${PN}-fbscaled = "\
     ${INIT_D_DIR}/fbscaled \
     ${sbindir}/fbscaled \
 "
 
-FILES_flash-scripts = "\
+FILES:flash-scripts = "\
     ${sbindir}/flash-fsbl \
     ${sbindir}/flash-rescue \
     ${sbindir}/flash-kernel \
@@ -142,5 +142,5 @@ FILES_flash-scripts = "\
 
 INITSCRIPT_PACKAGES = "${PN}-autoflashd ${PN}-fbscaled"
 INITSCRIPT_NAME = ""
-INITSCRIPT_NAME_${PN}-autoflashd = "autoflashd"
-INITSCRIPT_NAME_${PN}-fbscaled = "fbscaled"
+INITSCRIPT_NAME:${PN}-autoflashd = "autoflashd"
+INITSCRIPT_NAME:${PN}-fbscaled = "fbscaled"

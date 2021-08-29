@@ -12,18 +12,18 @@ PRECOMPILED_ARCH = "${MACHINE}"
 
 PACKAGES =+ "${PN}-firmware"
 
-RDEPENDS_${PN}-firmware = "${PN}-firmware"
-RDEPENDS_${PN} = "${PN}-firmware dreambox-dvb-modules-systemd"
+RDEPENDS:${PN}-firmware = "${PN}-firmware"
+RDEPENDS:${PN} = "${PN}-firmware dreambox-dvb-modules-systemd"
 
-FILES_${PN} = "${sysconfdir}/modules-load.d ${nonarch_base_libdir}/modules/${DM_LOCALVERSION}/extra"
+FILES:${PN} = "${sysconfdir}/modules-load.d ${nonarch_base_libdir}/modules/${DM_LOCALVERSION}/extra"
 
-FILES_${PN}-firmware = "${nonarch_base_libdir}/firmware"
+FILES:${PN}-firmware = "${nonarch_base_libdir}/firmware"
 
 # We don't use KERNEL_VERSION in this recipe, because the
 # precompiled modules depend on a specific version.
 DM_LOCALVERSION = "${@d.getVar('PV', True).rsplit('-', 1)[0]}"
 
-pkg_postinst_${PN} () {
+pkg_postinst:${PN} () {
 if [ -z "$D" ]; then
 	depmod -a ${DM_LOCALVERSION}
 fi
@@ -31,6 +31,6 @@ fi
 
 inherit opendreambox-precompiled-binary-new
 
-RREPLACES_${PN} += "dreamframeinject"
-RPROVIDES_${PN} += "dreamframeinject"
-RCONFLICTS_${PN} += "dreamframeinject"
+RREPLACES:${PN} += "dreamframeinject"
+RPROVIDES:${PN} += "dreamframeinject"
+RCONFLICTS:${PN} += "dreamframeinject"

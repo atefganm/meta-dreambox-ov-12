@@ -1,4 +1,4 @@
-IMAGE_CMD_jffs2_prepend = " \
+IMAGE_CMD:jffs2:prepend = " \
 	rm -rf ${IMAGE_ROOTFS}/tmp/*; \
 	mkfs.jffs2 \
 		--root=${IMAGE_ROOTFS}/boot \
@@ -24,7 +24,7 @@ IMAGE_CMD_jffs2_prepend = " \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.nfi; \
 "
 
-IMAGE_CMD_ubifs_prepend = " \
+IMAGE_CMD:ubifs:prepend = " \
 	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
 	mkfs.jffs2 \
 		--root=${IMAGE_ROOTFS}/boot \

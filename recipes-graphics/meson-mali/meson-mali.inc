@@ -2,16 +2,16 @@ SUMMARY = "Amlogic mali opengl provider"
 LICENSE = "CLOSED"
 PROVIDES = "virtual/egl virtual/libgles2"
 
-RRECOMMENDS_${PN} = "${PN}-module-bifrost-r12p0"
+RRECOMMENDS:${PN} = "${PN}-module-bifrost-r12p0"
 
-RPROVIDES_${PN} = "libegl libegl1 libgles2 libglesv2-2"
-RPROVIDES_${PN}-dev = "libegl-dev libgles2-dev"
+RPROVIDES:${PN} = "libegl libegl1 libgles2 libglesv2-2"
+RPROVIDES:${PN}-dev = "libegl-dev libgles2-dev"
 
-RCONFLICTS_${PN} = "libegl libegl1 libgles2 libglesv2-2"
-RCONFLICTS_${PN}-dev = "libegl-dev libgles2-dev"
+RCONFLICTS:${PN} = "libegl libegl1 libgles2 libglesv2-2"
+RCONFLICTS:${PN}-dev = "libegl-dev libgles2-dev"
 
-RREPLACES_${PN} = "libegl libegl1 libgles2 libglesv2-2"
-RREPLACES_${PN}-dev = "libegl-dev libgles2-dev"
+RREPLACES:${PN} = "libegl libegl1 libgles2 libglesv2-2"
+RREPLACES:${PN}-dev = "libegl-dev libgles2-dev"
 
-FILES_${PN} += "${libdir}/lib*${SOLIBSDEV}"
-FILES_SOLIBSDEV = ""
+FILES:${PN} += "${libdir}/lib*${SOLIBSDEV}"
+FILES:SOLIBSDEV = ""

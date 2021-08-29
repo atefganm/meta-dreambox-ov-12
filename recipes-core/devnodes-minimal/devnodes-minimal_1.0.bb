@@ -9,4 +9,4 @@ do_install() {
         mknod -m 666 ${D}/dev/null c 1 3
 }
 
-FILES_${PN} = "/dev/"
+FILES:${PN} = "/dev/"

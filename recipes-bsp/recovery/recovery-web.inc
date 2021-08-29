@@ -4,7 +4,7 @@ LICENSE = "CLOSED"
 
 DEPENDS = "fcgi"
 
-SRC_URI_append = ";branch=${BRANCH}"
+SRC_URI:append = ";branch=${BRANCH}"
 
 do_install() {
     oe_runmake install DESTDIR=${D}
@@ -12,7 +12,7 @@ do_install() {
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-RDEPENDS_${PN} = "\
+RDEPENDS:${PN} = "\
     coreutils-stdbuf \
     haserl \
     lighttpd \
@@ -21,4 +21,4 @@ RDEPENDS_${PN} = "\
     recovery \
 "
 
-#RRECOMMENDS_${PN} = "dreambox-dvb-modules-stb-core"
+#RRECOMMENDS:${PN} = "dreambox-dvb-modules-stb-core"

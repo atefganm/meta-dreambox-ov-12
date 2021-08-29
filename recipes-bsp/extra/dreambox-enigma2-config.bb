@@ -9,7 +9,7 @@ SRC_URI = "file://skin_box.xml"
 
 PACKAGES = "${PN}"
 
-FILES_${PN} = "${datadir}/enigma2"
+FILES:${PN} = "${datadir}/enigma2"
 
 PACKAGE_ARCH = "${MACHINE}"
 
