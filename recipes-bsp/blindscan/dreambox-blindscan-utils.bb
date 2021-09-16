@@ -24,12 +24,12 @@ SRC_URI:dm820 = "${SRC_URI:dm520}"
 
 SRC_URI:dm7080 = "${SRC_URI:dm520}"
 
-SRC_URI:dreamone = "${DREAMBOXURL}/2.6.0/blindscan-utils/${PV}/aarch64/aa6dad1ece041c236338d3a41fd5da1e/blindscan-utils_${PV}_aarch64.tar.xz;name=aarch64-pyro"
+SRC_URI:dreamone = "${DREAMBOXURL}/2.6.0/blindscan-utils/${PV}/aarch64/aa6dad1ece041c236338d3a41fd5da1e/blindscan-utils_${PV}:aarch64.tar.xz;name=aarch64-pyro"
 
 SRC_URI:dreamtwo = "${SRC_URI:dreamone}"
 
 S = "${WORKDIR}/blindscan-utils_${PV}_${DEFAULTTUNE}"
-S_dreamone = "${WORKDIR}/blindscan-utils_${PV}_aarch64"
+S_dreamone = "${WORKDIR}/blindscan-utils_${PV}:aarch64"
 S_dreamtwo = "${S_dreamone}"
 
 PACKAGES = "${PN}"

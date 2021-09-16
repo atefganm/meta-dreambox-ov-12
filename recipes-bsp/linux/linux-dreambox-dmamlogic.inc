@@ -15,9 +15,9 @@ KERNEL_ENABLE_CGROUPS = "1"
 # By default, kernel.bbclass modifies package names to allow multiple kernels
 # to be installed in parallel. We revert this change and rprovide the versioned
 # package names instead, to allow only one kernel to be installed.
-PKG_kernel = "kernel"
+PKG:kernel = "kernel"
 RPROVIDES:${KERNEL_PACKAGE_NAME} = "${KERNEL_PACKAGE_NAME}-${KERNEL_VERSION}"
-PKG_${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-base"
+PKG:${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-base"
 RPROVIDES:${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-base-${KERNEL_VERSION}"
 RDEPENDS:${KERNEL_PACKAGE_NAME}-base = ""
 PACKAGES:remove = "${KERNEL_PACKAGE_NAME}-image"
@@ -32,7 +32,7 @@ python __anonymous() {
     devicetree = d.getVar('KERNEL_DEVICETREE', False)
 
     for imagetype in set(types):
-        d.setVar('PKG_kernel-image-%s' % imagetype.lower(), 'kernel-image-%s' % imagetype.lower())
+        d.setVar('PKG:kernel-image-%s' % imagetype.lower(), 'kernel-image-%s' % imagetype.lower())
         d.setVar('RPROVIDES:kernel-image-%s' % imagetype.lower(), 'kernel-image-%s-${KERNEL_VERSION}' % imagetype.lower())
         if devicetree:
             d.appendVar('RDEPENDS:kernel-image-%s' % imagetype.lower(), ' kernel-devicetree')
@@ -46,7 +46,7 @@ python __anonymous() {
     postinst += '[ -n "$D" ] || flash-kernel ${KERNEL_FLASH_ARGS} /${KERNEL_IMAGEDEST}/%s-${KERNEL_VERSION_NAME}\n' % imagetype
     d.setVar('pkg_postinst:kernel-image-%s' % imagetype.lower(), postinst)
 
-    d.setVar('PKG_kernel-image-%s' % imagetype.lower(), 'kernel-image')
+    d.setVar('PKG:kernel-image-%s' % imagetype.lower(), 'kernel-image')
     d.appendVar('RPROVIDES:kernel-image-%s' % imagetype.lower(), ' kernel-image-${KERNEL_VERSION}')
     d.setVar('RDEPENDS:kernel-base', 'kernel-image-%s' % imagetype.lower())
 }

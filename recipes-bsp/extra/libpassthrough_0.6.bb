@@ -11,4 +11,4 @@ inherit opendreambox-precompiled-binary-new
 FILES:${PN} = "${libdir}/lib*${SOLIBSDEV}"
 FILES:SOLIBSDEV = ""
 
-DEBIAN_NOAUTONAME_${PN} = "1"
+DEBIAN_NOAUTONAME:${PN} = "1"
