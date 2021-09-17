@@ -14,4 +14,4 @@ RREPLACES:${PN} = "libegl libegl1 libgles2 libglesv2-2"
 RREPLACES:${PN}-dev = "libegl-dev libgles2-dev"
 
 FILES:${PN} += "${libdir}/lib*${SOLIBSDEV}"
-FILES:SOLIBSDEV = ""
+FILES_SOLIBSDEV = ""

@@ -31,7 +31,7 @@ RREPLACES:${PN}-dev = "libegl-dev libgles1-dev libgles2-dev"
 # As a workaround, keep .so symlinks in base package
 # until all users were recompiled.
 FILES:${PN} += "${libdir}/lib*${SOLIBSDEV}"
-FILES:SOLIBSDEV = ""
+FILES_SOLIBSDEV = ""
 
 #do_install:append() {
 #	rm -rf ${D}${libdir}/pkgconfig
