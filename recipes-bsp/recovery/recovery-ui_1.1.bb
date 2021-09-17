@@ -22,10 +22,10 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 #RRECOMMENDS:${PN} = "dreambox-dvb-modules-${MACHINE}-lcd"
 
 BRANCH = "master"
-BRANCH_dm7080 = "dm7080"
-BRANCH_dm820 = "${BRANCH_dm7080}"
-BRANCH_dreamone = "${BRANCH_dm7080}"
-BRANCH_dreamtwo = "${BRANCH_dm7080}"
+BRANCH:dm7080 = "dm7080"
+BRANCH:dm820 = "${BRANCH:dm7080}"
+BRANCH:dreamone = "${BRANCH:dm7080}"
+BRANCH:dreamtwo = "${BRANCH:dm7080}"
 
 COMPATIBLE_MACHINE = "^(dm820|dm7080|dreamone|dreamtwo)$"
 

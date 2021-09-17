@@ -12,10 +12,10 @@ LIBEGLDEP:dm900 = "libvc5driver"
 LIBEGLDEP:dm920 = "libvc5driver"
 
 LIBEGLRDEP = ""
-LIBEGLRDEP_dm820 = "libv3ddriver"
-LIBEGLRDEP_dm7080 = "libv3ddriver"
-LIBEGLRDEP_dm900 = "libvc5driver"
-LIBEGLRDEP_dm920 = "libvc5driver"
+LIBEGLRDEP:dm820 = "libv3ddriver"
+LIBEGLRDEP:dm7080 = "libv3ddriver"
+LIBEGLRDEP:dm900 = "libvc5driver"
+LIBEGLRDEP:dm920 = "libvc5driver"
 
 RDEPENDS:${PN} = "${LIBEGLRDEP}"
 

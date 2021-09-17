@@ -13,7 +13,7 @@ SRC_URI[dm900.sha256sum] = "9c75d63d3edebad946c92bab2f72f73513505b24dc95442c82ef
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-PRECOMPILED_ARCH_dm920 = "dm900"
+PRECOMPILED_ARCH:dm920 = "dm900"
 
 #RRECOMMENDS:${PN} = "dreambox-dvb-modules-${MACHINE}-lcd"
 
