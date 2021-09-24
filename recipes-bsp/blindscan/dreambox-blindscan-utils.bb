@@ -29,8 +29,8 @@ SRC_URI:dreamone = "${DREAMBOXURL}/2.6.0/blindscan-utils/${PV}/aarch64/aa6dad1ec
 SRC_URI:dreamtwo = "${SRC_URI:dreamone}"
 
 S = "${WORKDIR}/blindscan-utils_${PV}_${DEFAULTTUNE}"
-S_dreamone = "${WORKDIR}/blindscan-utils_${PV}_aarch64"
-S_dreamtwo = "${S_dreamone}"
+S:dreamone = "${WORKDIR}/blindscan-utils_${PV}_aarch64"
+S:dreamtwo = "${S:dreamone}"
 
 PACKAGES = "${PN}"
 
