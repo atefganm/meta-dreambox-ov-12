@@ -54,3 +54,5 @@ do_make_scripts[depends] += "virtual/kernel:do_shared_workdir"
 do_make_scripts() {
 	:
 }
+
+export KCFLAGS = "-Wno-error"
