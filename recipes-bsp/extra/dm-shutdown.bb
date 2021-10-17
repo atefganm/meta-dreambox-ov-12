@@ -1,6 +1,5 @@
 require conf/license/license-gplv2.inc
 
-
 SRC_URI = "file://dm-shutdown.sh"
 
 INITSCRIPT_NAME = "dm-shutdown"
@@ -12,7 +11,6 @@ do_compile() {
 }
 
 do_install() {
-    install -d ${D}${INIT_D_DIR}/
-    install -m 0755 ${WORKDIR}/dm-shutdown.sh ${D}${INIT_D_DIR}/dm-shutdown
+	install -d ${D}${INIT_D_DIR}/
+	install -m 0755 ${WORKDIR}/dm-shutdown.sh ${D}${INIT_D_DIR}/dm-shutdown
 }
-

@@ -13,12 +13,12 @@ do_install() {
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 RDEPENDS:${PN} = "\
-    coreutils-stdbuf \
-    haserl \
-    lighttpd \
-    lighttpd-module-cgi \
-    lighttpd-module-fastcgi \
-    recovery \
-"
+	coreutils-stdbuf \
+	haserl \
+	lighttpd \
+	lighttpd-module-cgi \
+	lighttpd-module-fastcgi \
+	recovery \
+	"
 
 #RRECOMMENDS:${PN} = "dreambox-dvb-modules-stb-core"

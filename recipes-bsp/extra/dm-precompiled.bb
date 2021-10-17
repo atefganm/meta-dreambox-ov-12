@@ -3,6 +3,8 @@ SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 COMPATIBLE_MACHINE = "^(dreamone|dreamtwo)$"
 
 SRC_URI = "file://others.zip"

@@ -8,6 +8,8 @@ inherit opendreambox-precompiled-binary-new
 
 FILES:${PN} = "${libdir}/gstreamer-1.0/*.so"
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 COMPATIBLE_MACHINE = "^(dreamone|dreamtwo)$"
 
 PRECOMPILED_ARCH = "aarch64"

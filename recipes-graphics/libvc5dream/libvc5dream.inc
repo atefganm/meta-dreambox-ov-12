@@ -36,3 +36,5 @@ FILES_SOLIBSDEV = ""
 #do_install:append() {
 #	rm -rf ${D}${libdir}/pkgconfig
 #}
+
+PACKAGE_ARCH = "${MACHINE_ARCH}"

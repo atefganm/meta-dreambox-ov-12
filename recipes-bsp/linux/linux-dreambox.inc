@@ -48,6 +48,7 @@ pkg_preinst:${KERNEL_PACKAGE_NAME}-image() {
 		fi
 	fi
 }
+
 pkg_prerm:${KERNEL_PACKAGE_NAME}-image() {
 	if [ -z "$D" ]
 	then
@@ -59,6 +60,7 @@ pkg_prerm:${KERNEL_PACKAGE_NAME}-image() {
 		fi
 	fi
 }
+
 pkg_postinst:${KERNEL_PACKAGE_NAME}-image() {
         if [ -z "$D" ] && mountpoint -q /${KERNEL_IMAGEDEST}; then
                 if grep -q '\<root=/dev/mtdblock3\>' /proc/cmdline && grep -q '\<root=ubi0:rootfs\>' /boot/autoexec.bat; then
@@ -67,6 +69,7 @@ pkg_postinst:${KERNEL_PACKAGE_NAME}-image() {
                 umount /${KERNEL_IMAGEDEST};
         fi
 }
+
 pkg_postrm:${KERNEL_PACKAGE_NAME}-image () {
 	if [ -z "$D" ]
 	then
@@ -77,6 +80,7 @@ pkg_postrm:${KERNEL_PACKAGE_NAME}-image () {
 # Do not use update-alternatives!
 pkg_postinst:kernel () {
 }
+
 pkg_postrm:kernel () {
 }
 
@@ -87,9 +91,7 @@ USB_CMDLINE = "root=${USB_ROOT} rootdelay=10 rw ${CMDLINE_CONSOLE}"
 
 LOCALVERSION = "-${MACHINE}"
 
-
 do_configure:prepend() {
-
         echo "" > ${S}/.config
 
         echo "CONFIG_CMDLINE=\"${CMDLINE}\"" >> ${S}/.config
@@ -106,5 +108,4 @@ do_configure:prepend() {
 
         echo 'CONFIG_LOCALVERSION="${LOCALVERSION}"' >>${S}/.config
         echo '# CONFIG_LOCALVERSION_AUTO is not set' >>${S}/.config
-
 }

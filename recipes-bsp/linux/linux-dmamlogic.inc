@@ -66,6 +66,7 @@ do_configure:prepend() {
     kernel_conf_variable CDROM_PKTCDVD m
     kernel_conf_variable CDROM_PKTCDVD_BUFFERS=8
     kernel_conf_variable CDROM_PKTCDVD_WCACHE n
+    kernel_conf_variable SCSI_SCAN_ASYNC y
     kernel_conf_variable DEFAULT_HOSTNAME="${MACHINE}"
     kernel_conf_variable PRINTK y
     kernel_conf_variable EXT2_FS m
@@ -98,6 +99,7 @@ do_configure:prepend() {
     kernel_conf_variable HID_LOGITECH m
     kernel_conf_variable HID_LOGITECH_DJ m
     kernel_conf_variable USB_HID m
+    kernel_conf_variable USB_NET_AX88179_178A m
 
     sed -e "${CONF_SED_SCRIPT}" \
     < '${WORKDIR}/defconfig' >>'${B}/.config'
@@ -113,7 +115,7 @@ do_configure:append() {
 }
 
 do_install:append() {
-    oe_runmake headers_install INSTALL_HDR_PATH=${D}${exec_prefix}/src/linux-${KERNEL_VERSION} ARCH=$ARCH
+	oe_runmake headers_install INSTALL_HDR_PATH=${D}${exec_prefix}/src/linux-${KERNEL_VERSION} ARCH=$ARCH
 }
 
 PACKAGES =+ "${KERNEL_PACKAGE_NAME}-headers"

@@ -10,3 +10,5 @@ SRC_URI[cortexa15hf-neon-vfpv4.sha256sum] = "e9f119af9bcadf4a74d91ed8ebccbf86bc4
 COMPATIBLE_MACHINE = "^(dm900|dm920)$"
 
 inherit opendreambox-precompiled-binary-new
+
+PACKAGE_ARCH = "${MACHINE_ARCH}"

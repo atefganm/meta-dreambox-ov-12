@@ -8,9 +8,9 @@ do_install:append() {
 }
 
 do_install:prepend() {
-   if [ "${KERNEL_IMAGETYPE}" = "vmlinux.bin" ]; then
-      install -m 0644 ${B}/arch/${ARCH}/boot/vmlinux.bin ${B}/
-   fi
+	if [ "${KERNEL_IMAGETYPE}" = "vmlinux.bin" ]; then
+		install -m 0644 ${B}/arch/${ARCH}/boot/vmlinux.bin ${B}/
+	fi
 }
 
 KERNEL_EXTRA_IMAGETYPE ?= "${KERNEL_ALT_IMAGETYPE}"

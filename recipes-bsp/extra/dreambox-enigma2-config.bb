@@ -3,6 +3,9 @@ SECTION = "base"
 PRIORITY = "required"
 MAINTAINER = "PLi team"
 LICENSE = "CLOSED"
+
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 COMPATIBLE_MACHINE = "^(dm7020hd|dm8000)$"
 
 SRC_URI = "file://skin_box.xml"
@@ -11,7 +14,7 @@ PACKAGES = "${PN}"
 
 FILES:${PN} = "${datadir}/enigma2"
 
-PACKAGE_ARCH = "${MACHINE}"
+PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 S = "${WORKDIR}"
 

@@ -1,12 +1,12 @@
 inherit image
 
 BAD_RECOMMENDATIONS += " \
-        busybox-syslog \
-        lighttpd-module-access \
-        lighttpd-module-accesslog \
-        udev-hwdb \
-        update-rc.d \
-"
+	busybox-syslog \
+	lighttpd-module-access \
+	lighttpd-module-accesslog \
+	udev-hwdb \
+	update-rc.d \
+	"
 
 IMAGE_FEATURES = "empty-root-password"
 IMAGE_FSTYPES = "cpio.gz"
@@ -29,7 +29,8 @@ IMAGE_INSTALL = " \
         sysvinit \
         udev \
         xfsprogs-mkfs \
-"
+	"
+
 IMAGE_LINGUAS = ""
 IMAGE_ROOTFS_SIZE = "16384"
 USE_DEVFS = "1"

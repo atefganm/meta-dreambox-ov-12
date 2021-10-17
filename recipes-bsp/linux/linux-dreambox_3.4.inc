@@ -42,5 +42,6 @@ python populate_packages:prepend() {
 # Do not use update-alternatives!
 pkg_postinst:${KERNEL_PACKAGE_NAME}-image () {
 }
+
 pkg_postrm:${KERNEL_PACKAGE_NAME}-image () {
 }

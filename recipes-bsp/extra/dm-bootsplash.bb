@@ -1,8 +1,9 @@
 SUMMARY = "Dreambox boot splash screen"
 SECTION = "base"
 PRIORITY = "required"
-PACKAGE_ARCH = "${MACHINE_ARCH}"
 LICENSE = "CLOSED"
+
+PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(dm500hdv2|dm800sev2|dm7020hd|dm8000)$"
 
@@ -23,9 +24,9 @@ SRC_URI[dm500hdv2.md5sum] = "c0413bfe6c03efc5fa1825b6ad8ac7bd"
 SRC_URI[dm500hdv2.sha256sum] = "005b9e99566fdee4d76ec1532273dc3e29a14b723d0bf6108228988e2a30d013"
 
 do_install() {
-    install -d ${D}/boot
-    install -m 0755 ${S}/dreambox-bootlogo_${BINARY_VERSION}_${MACHINE}/bootlogo-${MACHINE}.elf.gz ${D}/boot/
-    install -m 0755 ${S}/dreambox-bootlogo_${BINARY_VERSION}_${MACHINE}/bootlogo-${MACHINE}.jpg ${D}/boot/
+	install -d ${D}/boot
+	install -m 0755 ${S}/dreambox-bootlogo_${BINARY_VERSION}_${MACHINE}/bootlogo-${MACHINE}.elf.gz ${D}/boot/
+	install -m 0755 ${S}/dreambox-bootlogo_${BINARY_VERSION}_${MACHINE}/bootlogo-${MACHINE}.jpg ${D}/boot/
 }
 
 inherit deploy

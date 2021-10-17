@@ -14,7 +14,7 @@ SRC_URI:append = ";branch=${BRANCH}"
 inherit opendreambox-git pkgconfig update-rc.d
 
 do_install() {
-    oe_runmake install DESTDIR=${D}
+	oe_runmake install DESTDIR=${D}
 }
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"

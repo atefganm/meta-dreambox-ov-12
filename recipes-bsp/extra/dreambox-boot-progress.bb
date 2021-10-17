@@ -2,6 +2,7 @@ DESCRIPTION = "Display progress bar while booting"
 SECTION = "base"
 PRIORITY = "optional"
 DEPENDS = ""
+
 PV = "3"
 
 require conf/license/openvision-gplv2.inc
@@ -27,4 +28,3 @@ do_install () {
 	ln -sf ../init.d/progress ${D}${sysconfdir}/rcS.d/S40progress
 	ln -sf ../init.d/progress ${D}${sysconfdir}/rcS.d/S50progress
 }
-

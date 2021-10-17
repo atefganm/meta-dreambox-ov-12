@@ -8,3 +8,5 @@ COMPATIBLE_MACHINE = "^(dreamone|dreamtwo)$"
 inherit opendreambox-precompiled-binary-new
 
 PRECOMPILED_ARCH = "aarch64"
+
+PACKAGE_ARCH = "${MACHINE_ARCH}"

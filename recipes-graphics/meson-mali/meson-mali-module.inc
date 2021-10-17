@@ -23,27 +23,30 @@ EXTRA_OEMAKE += " \
 EXTRA_CFLAGS = "-DCONFIG_MALI_PLATFORM_DEVICETREE -DCONFIG_MALI_MIDGARD_DVFS -DCONFIG_MALI_BACKEND=gpu"
 
 do_compile() {
-    unset CC CFLAGS CPP CPPFLAGS CXX CXXFLAGS CCLD LDFLAGS
-    oe_runmake -C ${STAGING_KERNEL_DIR} EXTRA_CFLAGS="${EXTRA_CFLAGS}"
+	unset CC CFLAGS CPP CPPFLAGS CXX CXXFLAGS CCLD LDFLAGS
+	oe_runmake -C ${STAGING_KERNEL_DIR} EXTRA_CFLAGS="${EXTRA_CFLAGS}"
 }
 
 do_install() {
-    unset CC CFLAGS CPP CPPFLAGS CXX CXXFLAGS CCLD LDFLAGS
-    oe_runmake -C ${STAGING_KERNEL_DIR} modules_install
+	unset CC CFLAGS CPP CPPFLAGS CXX CXXFLAGS CCLD LDFLAGS
+	oe_runmake -C ${STAGING_KERNEL_DIR} modules_install
 
-    install -d ${D}${sysconfdir}/modules-load.d
-    echo mali_kbase > ${D}${sysconfdir}/modules-load.d/00-${BPN}.conf
-    chmod 0644 ${D}${sysconfdir}/modules-load.d/00-${BPN}.conf
+	install -d ${D}${sysconfdir}/modules-load.d
+	echo mali_kbase > ${D}${sysconfdir}/modules-load.d/00-${BPN}.conf
+	chmod 0644 ${D}${sysconfdir}/modules-load.d/00-${BPN}.conf
 }
 
 FILES:${PN} = "${sysconfdir}/modules-load.d \
-               /lib/modules/${KERNEL_VERSION}/extra"
+	${nonarch_base_libdir}/modules/${KERNEL_VERSION}/extra \
+	"
 
 pkg_postinst:${PN} () {
 if [ -z "$D" ]; then
         depmod -a ${KERNEL_VERSION}
 fi
 }
+
+PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(dreamone|dreamtwo)$"
 

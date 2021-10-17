@@ -15,3 +15,5 @@ RREPLACES:${PN}-dev = "libegl-dev libgles2-dev"
 
 FILES:${PN} += "${libdir}/lib*${SOLIBSDEV}"
 FILES_SOLIBSDEV = ""
+
+PACKAGE_ARCH = "${MACHINE_ARCH}"

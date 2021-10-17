@@ -3,9 +3,11 @@ SECTION = "base"
 LICENSE = "CLOSED"
 PROVIDES += "virtual/bootloader"
 PRIORITY = "required"
-PACKAGE_ARCH = "${MACHINE_ARCH}"
 DEPENDS = "dreambox-buildimage-native"
+
 DATE = "${@time.strftime('%Y%m%d',time.gmtime())}"
+
+PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit deploy
 
