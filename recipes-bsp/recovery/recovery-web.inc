@@ -7,7 +7,7 @@ DEPENDS = "fcgi"
 SRC_URI:append = ";branch=${BRANCH}"
 
 do_install() {
-    oe_runmake install DESTDIR=${D}
+	oe_runmake install DESTDIR=${D}
 }
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"

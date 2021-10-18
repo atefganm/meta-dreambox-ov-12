@@ -7,3 +7,5 @@ PRECOMPILED_ARCH = "${MACHINE_ARCH}"
 PRECOMPILED_ARCH:dm920 = "dm900"
 
 inherit opendreambox-precompiled-binary-new
+
+COMPATIBLE_MACHINE = "^(dm900|dm920)$"

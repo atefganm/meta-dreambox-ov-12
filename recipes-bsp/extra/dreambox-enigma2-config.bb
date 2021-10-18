@@ -14,8 +14,6 @@ PACKAGES = "${PN}"
 
 FILES:${PN} = "${datadir}/enigma2"
 
-PACKAGE_ARCH = "${MACHINE_ARCH}"
-
 S = "${WORKDIR}"
 
 do_install() {

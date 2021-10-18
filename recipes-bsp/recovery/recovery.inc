@@ -15,18 +15,18 @@ PACKAGES =+ "flash-scripts ${PN}-autoflashd ${PN}-fbscaled"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-EMMCRDEPENDS:recovery = " \
+EMMCRDEPENDS:recovery = "\
 	e2fsprogs-mke2fs \
 	gptfdisk \
 	"
 
-EMMCRDEPENDS:flash-scripts = "util-linux-sfdisk"
+EMMCRDEPENDS:flash-scripts += "util-linux-sfdisk"
 
-NANDRDEPENDS:recovery = "mtd-utils-ubifs"
+NANDRDEPENDS:recovery += "mtd-utils-ubifs"
 
-NANDRDEPENDS:flash-scripts = "mtd-utils"
+NANDRDEPENDS:flash-scripts += "mtd-utils"
 
-FASTBOOTRDEPENDS:flash-scripts = " \
+FASTBOOTRDEPENDS:flash-scripts = "\
 	fastboot \
 	mkbootblob \
 	"
@@ -40,11 +40,11 @@ RDEPENDS:${PN} = "\
 	util-linux-mount \
 	"
 
-RDEPENDS:${PN}:append:dm820 = "${EMMCRDEPENDS:recovery}"
-RDEPENDS:${PN}:append:dm7080 = "${EMMCRDEPENDS:recovery}"
-RDEPENDS:${PN}:append:dm900 = "${EMMCRDEPENDS:recovery}"
-RDEPENDS:${PN}:append:dm920 = "${EMMCRDEPENDS:recovery}"
-RDEPENDS:${PN}:append:dm520 = "${NANDRDEPENDS:recovery}"
+RDEPENDS:${PN}:append:dm820 += "${EMMCRDEPENDS:recovery}"
+RDEPENDS:${PN}:append:dm7080 += "${EMMCRDEPENDS:recovery}"
+RDEPENDS:${PN}:append:dm900 += "${EMMCRDEPENDS:recovery}"
+RDEPENDS:${PN}:append:dm920 += "${EMMCRDEPENDS:recovery}"
+RDEPENDS:${PN}:append:dm520 += "${NANDRDEPENDS:recovery}"
 
 RDEPENDS:${PN}:append:dreamone = "\
 	${EMMCRDEPENDS:recovery} \
@@ -56,7 +56,7 @@ RDEPENDS:${PN}:append:dreamtwo = "\
 	${PN}-fbscaled \
 	"
 
-RDEPENDS:flash-scripts = "coreutils-realpath"
+RDEPENDS:flash-scripts += "coreutils-realpath"
 
 RDEPENDS:flash-scripts:append:dm820 = "\
 	${EMMCRDEPENDS:flash-scripts} \
@@ -68,12 +68,9 @@ RDEPENDS:flash-scripts:append:dm7080 = "\
 	${FASTBOOTRDEPENDS:flash-scripts} \
 	"
 
-RDEPENDS:flash-scripts:append:dm900 = "${EMMCRDEPENDS:flash-scripts}"
-RDEPENDS:flash-scripts:append:dm920 = "${EMMCRDEPENDS:flash-scripts}"
-
-RDEPENDS:flash-scripts:append:dm520 = "\
-	${NANDRDEPENDS:flash-scripts} \
-	"
+RDEPENDS:flash-scripts:append:dm900 += "${EMMCRDEPENDS:flash-scripts}"
+RDEPENDS:flash-scripts:append:dm920 += "${EMMCRDEPENDS:flash-scripts}"
+RDEPENDS:flash-scripts:append:dm520 += "${NANDRDEPENDS:flash-scripts}"
 
 RDEPENDS:flash-scripts:append:dreamone = "\
 	${EMMCRDEPENDS:flash-scripts} \
