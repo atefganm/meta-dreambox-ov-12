@@ -80,3 +80,5 @@ RCNAME = "dmm2"
 KERNEL_MODULE_AUTOLOAD += "bluetooth"
 
 KODIEXTSETTINGS = ""
+
+CFLAGS:append:pn-titan = " -DDREAMBOX -DCONFIG_ION "

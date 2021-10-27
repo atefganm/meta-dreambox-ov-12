@@ -40,3 +40,9 @@ RCNAME = "dmm2"
 IMAGE_CLASSES += "tarxz-dreambox"
 
 KODIEXTSETTINGS = ""
+
+DVBMEDIASINK_CONFIG:dm7080 = "--with-pcm --with-wma --with-wmv --with-dtsdownmix --with-eac3 --with-dts --with-vb6 --with-vb8 --with-spark"
+DVBMEDIASINK_CONFIG:dm820 = "--with-pcm --with-wma --with-wmv --with-dtsdownmix --with-eac3 --with-dts --with-vb6 --with-vb8 --with-spark"
+DVBMEDIASINK_CONFIG:dm520 = "--with-pcm --with-wma --with-wmv --with-dtsdownmix --with-eac3 --with-dts --with-vb6 --with-vb8 --with-spark --with-h265"
+
+CFLAGS:append:pn-titan = " -DDREAMBOX -DCONFIG_ION "
