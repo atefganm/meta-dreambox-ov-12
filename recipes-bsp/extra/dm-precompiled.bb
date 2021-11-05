@@ -1,4 +1,4 @@
-DESCRIPTION = "Pre-compiled for ${MACHINE}"
+SUMMARY = "Pre-compiled for ${MACHINE}"
 SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
