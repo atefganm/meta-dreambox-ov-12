@@ -12,11 +12,11 @@ SRC_URI = "file://skin_box.xml"
 
 PACKAGES = "${PN}"
 
-FILES:${PN} = "${datadir}/enigma2"
+FILES:${PN} = "${enigma_skins}"
 
 S = "${WORKDIR}"
 
 do_install() {
-	install -d ${D}${datadir}/enigma2
-	install -m 644 ${S}/skin_box.xml ${D}${datadir}/enigma2/
+	install -d ${D}${enigma_skins}
+	install -m 644 ${S}/skin_box.xml ${D}${enigma_skins}/
 }
