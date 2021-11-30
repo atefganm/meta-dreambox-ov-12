@@ -40,11 +40,11 @@ RDEPENDS:${PN} = "\
 	util-linux-mount \
 	"
 
-RDEPENDS:${PN}:append:dm820 += "${EMMCRDEPENDS:recovery}"
-RDEPENDS:${PN}:append:dm7080 += "${EMMCRDEPENDS:recovery}"
-RDEPENDS:${PN}:append:dm900 += "${EMMCRDEPENDS:recovery}"
-RDEPENDS:${PN}:append:dm920 += "${EMMCRDEPENDS:recovery}"
-RDEPENDS:${PN}:append:dm520 += "${NANDRDEPENDS:recovery}"
+RDEPENDS:${PN}:append:dm820 = " ${EMMCRDEPENDS:recovery}"
+RDEPENDS:${PN}:append:dm7080 = " ${EMMCRDEPENDS:recovery}"
+RDEPENDS:${PN}:append:dm900 = " ${EMMCRDEPENDS:recovery}"
+RDEPENDS:${PN}:append:dm920 = " ${EMMCRDEPENDS:recovery}"
+RDEPENDS:${PN}:append:dm520 = " ${NANDRDEPENDS:recovery}"
 
 RDEPENDS:${PN}:append:dreamone = "\
 	${EMMCRDEPENDS:recovery} \
@@ -68,9 +68,9 @@ RDEPENDS:flash-scripts:append:dm7080 = "\
 	${FASTBOOTRDEPENDS:flash-scripts} \
 	"
 
-RDEPENDS:flash-scripts:append:dm900 += "${EMMCRDEPENDS:flash-scripts}"
-RDEPENDS:flash-scripts:append:dm920 += "${EMMCRDEPENDS:flash-scripts}"
-RDEPENDS:flash-scripts:append:dm520 += "${NANDRDEPENDS:flash-scripts}"
+RDEPENDS:flash-scripts:append:dm900 = " ${EMMCRDEPENDS:flash-scripts}"
+RDEPENDS:flash-scripts:append:dm920 = " ${EMMCRDEPENDS:flash-scripts}"
+RDEPENDS:flash-scripts:append:dm520 = " ${NANDRDEPENDS:flash-scripts}"
 
 RDEPENDS:flash-scripts:append:dreamone = "\
 	${EMMCRDEPENDS:flash-scripts} \
