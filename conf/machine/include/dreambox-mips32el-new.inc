@@ -46,3 +46,5 @@ DVBMEDIASINK_CONFIG:dm820 = "--with-pcm --with-wma --with-wmv --with-dtsdownmix 
 DVBMEDIASINK_CONFIG:dm520 = "--with-pcm --with-wma --with-wmv --with-dtsdownmix --with-eac3 --with-dts --with-vb6 --with-vb8 --with-spark --with-h265"
 
 CFLAGS:append:pn-titan = " -DDREAMBOX -DCONFIG_ION "
+
+KERNEL_FILE = "kernel.bin"
