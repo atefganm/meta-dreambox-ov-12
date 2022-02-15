@@ -20,7 +20,7 @@ IMAGE_CMD:jffs2:prepend = " \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
 	echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/imageversion; \
 	echo "https://forum.openvision.tech/app.php/donate" > ${DEPLOY_DIR_IMAGE}/donate.txt; \
-	zip -j ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}_web.zip ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.nfi ${DEPLOY_DIR_IMAGE}/imageversion ${DEPLOY_DIR_IMAGE}/donate.txt; \
+	zip -j ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}_webif.zip ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.nfi ${DEPLOY_DIR_IMAGE}/imageversion ${DEPLOY_DIR_IMAGE}/donate.txt; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.nfi; \
 "
 
@@ -67,7 +67,7 @@ IMAGE_CMD:ubifs:prepend = " \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
 	echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/imageversion; \
 	echo "https://forum.openvision.tech/app.php/donate" > ${DEPLOY_DIR_IMAGE}/donate.txt; \
-	zip -j ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}_web.zip ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.nfi ${DEPLOY_DIR_IMAGE}/imageversion ${DEPLOY_DIR_IMAGE}/donate.txt; \
+	zip -j ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}_webif.zip ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.nfi ${DEPLOY_DIR_IMAGE}/imageversion ${DEPLOY_DIR_IMAGE}/donate.txt; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.nfi; \
 	cd ${DEPLOY_DIR_IMAGE}; \
 	mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
