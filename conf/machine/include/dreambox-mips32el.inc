@@ -19,3 +19,6 @@ DVBMEDIASINK_CONFIG = "--with-pcm --with-wma --with-wmv --with-dtsdownmix --with
 DVBMEDIASINK_CONFIG:dm8000 = "--with-pcm --with-wma --with-wmv --with-dtsdownmix --with-eac3 --with-dts --with-limited-mpeg4v2"
 
 CFLAGS:append:pn-titan = " -DDREAMBOX "
+
+KERNEL_FILE = "kernel.bin"
+ROOTFS_FILE = "rootfs.bin"

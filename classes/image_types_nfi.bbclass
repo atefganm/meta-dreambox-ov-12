@@ -20,7 +20,7 @@ IMAGE_CMD:jffs2:prepend = " \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
 	echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/imageversion; \
 	echo "https://forum.openvision.tech/app.php/donate" > ${DEPLOY_DIR_IMAGE}/donate.txt; \
-	zip -j ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}_nfi.zip ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.nfi ${DEPLOY_DIR_IMAGE}/imageversion ${DEPLOY_DIR_IMAGE}/donate.txt; \
+	zip -j ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${DMTYPE}_web.zip ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.nfi ${DEPLOY_DIR_IMAGE}/imageversion ${DEPLOY_DIR_IMAGE}/donate.txt; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.nfi; \
 "
 
@@ -67,9 +67,17 @@ IMAGE_CMD:ubifs:prepend = " \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
 	echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/imageversion; \
 	echo "https://forum.openvision.tech/app.php/donate" > ${DEPLOY_DIR_IMAGE}/donate.txt; \
-	zip -j ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}_nfi.zip ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.nfi ${DEPLOY_DIR_IMAGE}/imageversion ${DEPLOY_DIR_IMAGE}/donate.txt; \
+	zip -j ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}_web.zip ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.nfi ${DEPLOY_DIR_IMAGE}/imageversion ${DEPLOY_DIR_IMAGE}/donate.txt; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.nfi; \
-"
+	cd ${DEPLOY_DIR_IMAGE}; \
+	mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
+	cp -f ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ubi ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${ROOTFS_FILE}; \
+	echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
+	echo "https://forum.openvision.tech/app.php/donate" > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/donate.txt; \
+	echo "dummy file do not delete" > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${KERNEL_FILE}; \
+	zip ${IMAGE_NAME}_flash.zip ${IMAGEDIR}/*; \
+	rm -Rf ${IMAGEDIR}; \
+	"
 
 EXTRA_IMAGECMD:jffs2 ?= "-e ${DREAMBOX_ERASE_BLOCK_SIZE} -n -l"
 EXTRA_IMAGECMD:ubifs ?= "-e ${DREAMBOX_ERASE_BLOCK_SIZE} -n -l"

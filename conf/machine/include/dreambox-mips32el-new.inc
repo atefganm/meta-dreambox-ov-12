@@ -31,6 +31,15 @@ IMAGE_CMD:tar:prepend = "\
 	rm -f ${DEPLOY_DIR_IMAGE}/*.tar.xz; \
 	"
 
+CONVERSION_CMD:xz:append = ";\
+	cd ${DEPLOY_DIR_IMAGE}; \
+	cp -f ${IMGDEPLOYDIR}/${IMAGE_NAME}_flash.tar.xz ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.tar.xz; \
+	echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/imageversion; \
+	echo "https://forum.openvision.tech/app.php/donate" > ${DEPLOY_DIR_IMAGE}/donate.txt; \
+	zip ${IMAGE_NAME}_web.zip ${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.tar.xz imageversion donate.txt; \
+	cd ${IMGDEPLOYDIR}; \
+	"
+
 STB_PLATFORM = "dm3gen"
 
 MACHINE_FEATURES += "modem dvb-c blindscan-dvbc hdmicec recovery ci usbconsole HDMI"
@@ -46,5 +55,3 @@ DVBMEDIASINK_CONFIG:dm820 = "--with-pcm --with-wma --with-wmv --with-dtsdownmix 
 DVBMEDIASINK_CONFIG:dm520 = "--with-pcm --with-wma --with-wmv --with-dtsdownmix --with-eac3 --with-dts --with-vb6 --with-vb8 --with-spark --with-h265"
 
 CFLAGS:append:pn-titan = " -DDREAMBOX -DCONFIG_ION "
-
-KERNEL_FILE = "kernel.bin"
