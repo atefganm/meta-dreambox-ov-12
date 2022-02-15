@@ -66,7 +66,7 @@ IMAGE_CMD:tar:prepend = "\
 	bzip2 ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/rootfs.tar; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
 	cd ${DEPLOY_DIR_IMAGE}; \
-	zip ${IMAGE_NAME}_mmc.zip ${IMAGEDIR}/*; \
+	zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/*; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.tar.bz2; \
 	rm -Rf ${IMAGEDIR}; \
 	"
