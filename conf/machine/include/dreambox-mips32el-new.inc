@@ -36,7 +36,7 @@ CONVERSION_CMD:xz:append = ";\
 	cp -f ${IMGDEPLOYDIR}/${IMAGE_NAME}_flash.tar.xz ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.tar.xz; \
 	echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/imageversion; \
 	echo "https://forum.openvision.tech/app.php/donate" > ${DEPLOY_DIR_IMAGE}/donate.txt; \
-	zip ${IMAGE_NAME}_web.zip ${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.tar.xz imageversion donate.txt; \
+	zip ${IMAGE_NAME}_webif.zip ${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.tar.xz imageversion donate.txt; \
 	cd ${IMGDEPLOYDIR}; \
 	"
 
