@@ -10,6 +10,8 @@ RPROVIDES:${PN} += "virtual/blindscan-dvbs virtual/blindscan-dvbc"
 
 DEPENDS = "ncurses"
 
+inherit preserve_binary
+
 PV = "1.12"
 
 DREAMBOXURL = "http://dreamboxupdate.com/download/opendreambox"
@@ -50,5 +52,3 @@ SRC_URI[aarch64-pyro.sha256sum] = "aeaf9088b3cb2bf91dcab7e7ae8d417ab7eaca304f2f9
 do_install() {
 	cp -fr * ${D}
 }
-
-INHIBIT_PACKAGE_STRIP = "1"

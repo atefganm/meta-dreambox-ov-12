@@ -4,3 +4,5 @@ SRC_URI[dreamtwo.md5sum] = "f0a701f97f27991aa578899da343ca91"
 SRC_URI[dreamtwo.sha256sum] = "85d63a173d2140000a1764065535e671fcf37d34488bf4ba3cb50eaf2cc4f713"
 
 require u-boot-bin.inc
+
+COMPATIBLE_MACHINE = "^(dreamone|dreamtwo)$"

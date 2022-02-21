@@ -9,7 +9,7 @@ DATE = "${@time.strftime('%Y%m%d',time.gmtime())}"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-inherit deploy
+inherit deploy preserve_binary
 
 do_configure[nostamp] = "1"
 

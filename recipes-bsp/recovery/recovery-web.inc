@@ -20,3 +20,5 @@ RDEPENDS:${PN} = "\
 	"
 
 #RRECOMMENDS:${PN} = "dreambox-dvb-modules-stb-core"
+
+inherit opendreambox-git

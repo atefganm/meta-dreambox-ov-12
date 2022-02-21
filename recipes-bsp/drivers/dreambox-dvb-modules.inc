@@ -13,7 +13,7 @@ SRC_URI = " \
 	file://modules \
 	"
 
-inherit module-base
+inherit module-base preserve_binary
 
 do_compile() {
 }

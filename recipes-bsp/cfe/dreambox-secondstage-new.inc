@@ -10,6 +10,8 @@ SRC_URI = "http://dreamboxupdate.com/download/opendreambox/2.2.0/dreambox-second
 
 PACKAGES = "${PN}"
 
+inherit preserve_binary
+
 S = "${WORKDIR}/dreambox-secondstage_${PV}_${MACHINE}"
 
 do_install() {

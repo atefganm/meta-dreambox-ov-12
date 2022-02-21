@@ -6,6 +6,8 @@ PRECOMPILED_URI ?= "http://dreamboxupdate.com/download/opendreambox/2.2.0/${@pre
 
 SRC_URI += "${PRECOMPILED_URI}"
 
+inherit preserve_binary
+
 S = "${WORKDIR}/${PRECOMPILED_NAME}_${PRECOMPILED_VERSION}_${PRECOMPILED_ARCH}"
 
 def precompiledPath(d):
@@ -18,9 +20,8 @@ def precompiledPath(d):
     return '%s/%s/%s/%s/%s_%s_%s.tar.xz' % (pn, pv, package_arch, md5sum, pn, pv, package_arch)
 
 do_install() {
-    find . -depth -not -path "./patches*" -not -path "./.pc*" -print0 | cpio --null -pdlu ${D}
-    chown -hR root:root ${D}
+	find . -depth -not -path "./patches*" -not -path "./.pc*" -print0 | cpio --null -pdlu ${D}
+	chown -hR root:root ${D}
 }
 
-INHIBIT_PACKAGE_STRIP = "1"
 INHIBIT_SYSROOT_STRIP = "1"

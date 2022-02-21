@@ -2,10 +2,10 @@ require conf/license/license-gplv2.inc
 
 SRC_URI = "file://startup_fix.sh"
 
+inherit update-rc.d
+
 INITSCRIPT_NAME = "startup_fix"
 INITSCRIPT_PARAMS = "start 03 S ."
-
-inherit update-rc.d
 
 do_compile() {
 }

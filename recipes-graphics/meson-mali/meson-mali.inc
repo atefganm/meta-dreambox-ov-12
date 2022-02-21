@@ -17,3 +17,7 @@ FILES:${PN} += "${libdir}/lib*${SOLIBSDEV}"
 FILES_SOLIBSDEV = ""
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
+
+inherit opendreambox-precompiled-binary-new
+
+PRECOMPILED_ARCH = "aarch64"

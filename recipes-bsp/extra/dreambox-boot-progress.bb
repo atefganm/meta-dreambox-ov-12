@@ -1,7 +1,6 @@
 SUMMARY = "Display progress bar while booting"
 SECTION = "base"
 PRIORITY = "optional"
-DEPENDS = ""
 
 PV = "3"
 

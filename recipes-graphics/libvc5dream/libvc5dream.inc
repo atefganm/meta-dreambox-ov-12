@@ -36,3 +36,5 @@ FILES_SOLIBSDEV = ""
 #do_install:append() {
 #	rm -rf ${D}${libdir}/pkgconfig
 #}
+
+inherit opendreambox-precompiled-binary-new

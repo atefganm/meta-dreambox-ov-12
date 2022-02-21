@@ -13,7 +13,7 @@ SRC_URI = "http://dreamboxupdate.com/download/opendreambox/2.0.0/${PN}/${PN}_${P
 
 S = "${WORKDIR}/${PN}_${PV}_${PACKAGE_ARCH}"
 
-INHIBIT_PACKAGE_STRIP = "1"
+inherit preserve_binary
 
 do_install() {
         install -d ${D}${bindir}

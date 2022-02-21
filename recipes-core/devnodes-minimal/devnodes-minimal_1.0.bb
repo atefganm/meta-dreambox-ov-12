@@ -10,3 +10,5 @@ do_install() {
 }
 
 FILES:${PN} = "/dev/"
+
+COMPATIBLE_MACHINE = "^(dreamone|dreamtwo)$"

@@ -9,8 +9,6 @@ SRCREV:dm820 = "${SRCREV:dm7080}"
 SRCREV:dreamone = "ffaa96d0e62568aa525728de98ffc10a07c3b8ec"
 SRCREV:dreamtwo = "${SRCREV:dreamone}"
 
-inherit opendreambox-git
-
 DMBRANCH:dm520 = "dm520"
 DMBRANCH:dm900 = "dm900"
 DMBRANCH:dm920 = "dm900"

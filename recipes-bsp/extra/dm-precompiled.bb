@@ -7,6 +7,8 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(dreamone|dreamtwo)$"
 
+inherit preserve_binary
+
 SRC_URI = "file://others.zip"
 
 S = "${WORKDIR}"

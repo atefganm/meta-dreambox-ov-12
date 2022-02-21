@@ -3,7 +3,7 @@ HOMEPAGE = "http://dreamboxupdate.com/"
 LICENSE = "CLOSED"
 DEPENDS = "coreutils-native udev"
 
-inherit pkgconfig update-rc.d
+inherit pkgconfig update-rc.d opendreambox-git
 
 do_install() {
 	oe_runmake install DESTDIR=${D}

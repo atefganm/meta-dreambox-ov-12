@@ -2,10 +2,10 @@ require conf/license/license-gplv2.inc
 
 SRC_URI = "file://dm-shutdown.sh"
 
+inherit update-rc.d
+
 INITSCRIPT_NAME = "dm-shutdown"
 INITSCRIPT_PARAMS = "start 39 0 ."
-
-inherit update-rc.d
 
 do_compile() {
 }

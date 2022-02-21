@@ -22,3 +22,5 @@ RPROVIDES:${PN} = "recovery-ui"
 INITSCRIPT_NAME = "recovery-ui"
 
 PRECOMPILED_NAME = "recovery-ui"
+
+COMPATIBLE_MACHINE = "^(dm520|dm900|dm920)$"

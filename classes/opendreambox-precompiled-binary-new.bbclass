@@ -9,6 +9,8 @@ PRECOMPILED_URI ?= "http://dreamboxupdate.com/download/opendreambox/${DMMUPDATE_
 
 SRC_URI += "${PRECOMPILED_URI}"
 
+inherit preserve_binary
+
 S = "${WORKDIR}/${PRECOMPILED_NAME}_${PRECOMPILED_VERSION}_${PRECOMPILED_ARCH}"
 
 def precompiledPath(d):
@@ -28,9 +30,8 @@ python () {
 }
 
 do_install() {
-    find . -depth -not -path "./patches*" -not -path "./.pc*" -print0 | cpio --null -pdlu ${D}
-    chown -hR root:root ${D}
+	find . -depth -not -path "./patches*" -not -path "./.pc*" -print0 | cpio --null -pdlu ${D}
+	chown -hR root:root ${D}
 }
 
-INHIBIT_PACKAGE_STRIP = "1"
 INHIBIT_SYSROOT_STRIP = "1"

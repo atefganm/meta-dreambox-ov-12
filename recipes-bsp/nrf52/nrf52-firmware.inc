@@ -4,6 +4,8 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 SRC_URI = " file://${CURRENT_FW}"
 
+inherit preserve_binary
+
 RPROVIDES:${PN} += "nrf52-firmware"
 
 do_compile() {
