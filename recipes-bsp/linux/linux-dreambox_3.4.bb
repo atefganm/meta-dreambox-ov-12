@@ -14,12 +14,12 @@ SRC_URI = " \
 	file://dvb_frontend-Multistream-support-${PV}.patch \
 	file://genksyms_fix_typeof_handling.patch \
 	file://defconfig \
-	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
+	${GCCKERPATCH} \
 	file://0001-log2-give-up-on-gcc-constant-optimizations.patch \
 	file://0002-cp1emu-do-not-use-bools-for-arithmetic.patch \
 	file://0003-makefile-silence-packed-not-aligned-warn.patch \
 	file://0004-fcrypt-fix-bitoperation-for-gcc.patch \
-	file://fix-never-be-null_outside-array-bounds-gcc-12.patch \
+	${GCCNULLPATCH} \
 	"
 	
 SRC_URI[kernel.md5sum] = "967f72983655e2479f951195953e8480"

@@ -34,7 +34,7 @@ SRC_URI = " \
 	file://024-rtl8712-fix-warnings.patch \
 	file://025-fixme-hardfloat.patch \
 	file://026-correctly-initiate-nand-flash-ecc-config-when-old-2n.patch \
-	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
+	${GCCKERPATCH} \
 	file://028-move-atomic-flags-field-after-cputime-expires-field.patch \
 	file://029-dvb_frontend-backport-multistream-support.patch \
 	file://030-STV-Add-MIS-PLS-support.patch \
@@ -47,7 +47,7 @@ SRC_URI = " \
 	file://0013-cp1emu-do-not-use-bools-for-arithmetic.patch \
 	file://0014-makefile-silence-packed-not-aligned-warn.patch \
 	file://0015-fcrypt-fix-bitoperation-for-gcc.patch \
-	file://fix-never-be-null_outside-array-bounds-gcc-12.patch \
+	${GCCNULLPATCH} \
 	"
 
 SRC_URI[kernel.md5sum] = "7ceb61f87c097fc17509844b71268935"
