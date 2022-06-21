@@ -4,3 +4,5 @@ SRC_URI[dreamtwo.sha256sum] = "1fe751b39429a51f31657b4c3b98f2acb13c1299f999a0593
 require dreambox-dvb-modules-meson.inc
 
 COMPATIBLE_MACHINE = "^(dreamtwo)$"
+
+DRIVERDATE = "20210518"
