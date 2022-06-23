@@ -13,7 +13,7 @@ SRC_URI = " \
 	file://modules \
 	"
 
-inherit module-base preserve_binary
+inherit module-base preserve_binary driverdeploy
 
 do_compile() {
 }

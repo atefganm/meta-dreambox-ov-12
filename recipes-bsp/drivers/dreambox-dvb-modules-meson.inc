@@ -29,7 +29,7 @@ if [ -z "$D" ]; then
 fi
 }
 
-inherit opendreambox-precompiled-binary-new
+inherit opendreambox-precompiled-binary-new driverdeploy
 
 RREPLACES:${PN} += "dreamframeinject"
 RPROVIDES:${PN} += "dreamframeinject"

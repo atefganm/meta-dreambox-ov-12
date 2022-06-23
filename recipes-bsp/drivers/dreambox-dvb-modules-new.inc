@@ -17,7 +17,7 @@ SRC_URI = "${DREAMBOX_DVB_MODULES_MIRROR}/dreambox-dvb-modules_${KV}-${MACHINE}-
 
 S = "${WORKDIR}/dreambox-dvb-modules_${KV}-${MACHINE}-${DRIVERDATE}_${MACHINE}"
 
-inherit module-base preserve_binary
+inherit module-base preserve_binary driverdeploy
 
 INHIBIT_SYSROOT_STRIP = "1"
 
