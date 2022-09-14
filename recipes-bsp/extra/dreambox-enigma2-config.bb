@@ -1,7 +1,6 @@
 SUMMARY = "Dreambox box-specific configuration files"
 SECTION = "base"
 PRIORITY = "required"
-MAINTAINER = "PLi team"
 LICENSE = "CLOSED"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
@@ -20,3 +19,5 @@ do_install() {
 	install -d ${D}${enigma_skins}
 	install -m 644 ${S}/skin_box.xml ${D}${enigma_skins}/
 }
+
+do_compile[noexec] = "1"

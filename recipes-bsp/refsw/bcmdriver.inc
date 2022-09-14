@@ -12,3 +12,5 @@ ALLOW_EMPTY:${PN}-dbg = "1"
 EXCLUDE_FROM_WORLD = "1"
 
 inherit opendreambox-precompiled-binary-new
+
+do_compile[noexec] = "1"

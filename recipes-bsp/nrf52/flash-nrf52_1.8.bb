@@ -10,3 +10,5 @@ inherit opendreambox-precompiled-binary-new
 PRECOMPILED_ARCH = "aarch64"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
+
+do_compile[noexec] = "1"

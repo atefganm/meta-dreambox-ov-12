@@ -7,8 +7,7 @@ inherit update-rc.d
 INITSCRIPT_NAME = "startup_fix"
 INITSCRIPT_PARAMS = "start 03 S ."
 
-do_compile() {
-}
+do_compile[noexec] = "1"
 
 do_install() {
 	install -d ${D}${INIT_D_DIR}/

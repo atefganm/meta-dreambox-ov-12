@@ -38,3 +38,5 @@ FILES_SOLIBSDEV = ""
 #}
 
 inherit opendreambox-precompiled-binary-new
+
+do_compile[noexec] = "1"

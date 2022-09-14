@@ -21,4 +21,6 @@ do_install() {
 
 RDEPENDS:${PN} = "flash-scripts"
 
-FILES:${PN} = "${datadir}/dreambox-secondstage/ssbl.bin"
+FILES:${PN} = "${datadir}"
+
+do_compile[noexec] = "1"

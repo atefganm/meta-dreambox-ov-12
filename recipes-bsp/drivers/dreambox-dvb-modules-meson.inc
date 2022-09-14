@@ -34,3 +34,5 @@ inherit opendreambox-precompiled-binary-new driverdeploy
 RREPLACES:${PN} += "dreamframeinject"
 RPROVIDES:${PN} += "dreamframeinject"
 RCONFLICTS:${PN} += "dreamframeinject"
+
+do_compile[noexec] = "1"

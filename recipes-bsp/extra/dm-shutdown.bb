@@ -7,8 +7,7 @@ inherit update-rc.d
 INITSCRIPT_NAME = "dm-shutdown"
 INITSCRIPT_PARAMS = "start 39 0 ."
 
-do_compile() {
-}
+do_compile[noexec] = "1"
 
 do_install() {
 	install -d ${D}${INIT_D_DIR}/

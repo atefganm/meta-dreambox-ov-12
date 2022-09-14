@@ -47,5 +47,6 @@ do_deploy() {
 	install -d ${DEPLOYDIR}
 	install -m 0644 secondstage-${MACHINE}-${PV}.bin ${DEPLOYDIR}/secondstage-${MACHINE}.bin
 }
-
 addtask deploy before do_package after do_install
+
+do_compile[noexec] = "1"

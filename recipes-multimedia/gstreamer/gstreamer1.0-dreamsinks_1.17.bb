@@ -6,7 +6,7 @@ SRC_URI[aarch64.sha256sum] = "933690b758e0b0c4b56b0882b42f8fe5e8bf9075562f887621
 
 inherit opendreambox-precompiled-binary-new
 
-FILES:${PN} = "${libdir}/gstreamer-1.0/*.so"
+FILES:${PN} = "${libdir}"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
@@ -14,11 +14,8 @@ COMPATIBLE_MACHINE = "^(dreamone|dreamtwo)$"
 
 PRECOMPILED_ARCH = "aarch64"
 
-do_configure() {
-}
-
-do_compile() {
-}
+do_configure[noexec] = "1"
+do_compile[noexec] = "1"
 
 do_install() {
 	install -d ${D}${libdir}/gstreamer-1.0

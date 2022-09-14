@@ -9,6 +9,10 @@ do_install() {
         mknod -m 666 ${D}/dev/null c 1 3
 }
 
-FILES:${PN} = "/dev/"
+FILES:${PN} = "/dev"
 
 COMPATIBLE_MACHINE = "^(dreamone|dreamtwo)$"
+
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
+do_compile[noexec] = "1"

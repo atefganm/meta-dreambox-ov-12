@@ -60,3 +60,5 @@ pkg_postrm:${PN}() {
 }
 
 FILES:${PN} = "/boot"
+
+do_compile[noexec] = "1"

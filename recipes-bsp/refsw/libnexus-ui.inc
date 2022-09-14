@@ -2,7 +2,7 @@ SUMMARY = "Nexus driver"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-FILES:${PN} = "${libdir}/*"
+FILES:${PN} = "${libdir}"
 FILES:${PN}-dev = ""
 FILES:${PN}-dbg = ""
 
@@ -14,3 +14,5 @@ EXCLUDE_FROM_WORLD = "1"
 inherit opendreambox-precompiled-binary-new
 
 RDEPENDS:${PN} = "bcmdriver"
+
+do_compile[noexec] = "1"

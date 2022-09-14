@@ -12,3 +12,5 @@ COMPATIBLE_MACHINE = "^(dm900|dm920)$"
 inherit opendreambox-precompiled-binary-new
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
+
+do_compile[noexec] = "1"

@@ -13,22 +13,12 @@ SRC_URI = "file://others.zip"
 
 S = "${WORKDIR}"
 
-do_configure() {
-}
-
-do_compile() {
-}
+do_compile[noexec] = "1"
 
 do_install() {
 	install -d ${D}${sysconfdir}/u-boot.scr.d
 	install -m 0644 ${S}${sysconfdir}/u-boot.scr.d/* ${D}${sysconfdir}/u-boot.scr.d
 	install -m 0644 ${S}${sysconfdir}/machine-id ${D}${sysconfdir}/
-}
-
-do_package_qa() {
-}
-
-do_populate_sysroot() {
 }
 
 FILES:${PN} += "/"

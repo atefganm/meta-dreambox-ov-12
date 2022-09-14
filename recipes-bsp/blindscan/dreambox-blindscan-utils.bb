@@ -8,8 +8,6 @@ COMPATIBLE_MACHINE = "^(dm500hdv2|dm520|dm800sev2|dm820|dm900|dm920|dm7020hd|dm7
 PROVIDES += "virtual/blindscan-dvbs virtual/blindscan-dvbc"
 RPROVIDES:${PN} += "virtual/blindscan-dvbs virtual/blindscan-dvbc"
 
-DEPENDS = "ncurses"
-
 inherit preserve_binary
 
 PV = "1.12"
@@ -52,3 +50,5 @@ SRC_URI[aarch64-pyro.sha256sum] = "aeaf9088b3cb2bf91dcab7e7ae8d417ab7eaca304f2f9
 do_install() {
 	cp -fr * ${D}
 }
+
+do_compile[noexec] = "1"

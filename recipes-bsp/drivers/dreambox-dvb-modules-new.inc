@@ -43,7 +43,7 @@ RDEPENDS:${PN} = "dreambox-secondstage-${MACHINE} kernel-${DM_LOCALVERSION}"
 RDEPENDS:${PN}:dm900 = "kernel-${KV}-${MACHINE}"
 RDEPENDS:${PN}:dm920 = "kernel-${KV}-${MACHINE}"
 
-FILES:${PN} = "${sysconfdir}/modules-load.d ${nonarch_base_libdir}/modules/${DM_LOCALVERSION}/extra"
+FILES:${PN} = "${sysconfdir} ${nonarch_base_libdir}"
 
 # We don't use KERNEL_VERSION in this recipe, because the
 # precompiled modules depend on a specific version.
@@ -55,3 +55,5 @@ if [ -z "$D" ]; then
 	depmod -a ${DM_LOCALVERSION}
 fi
 }
+
+do_compile[noexec] = "1"

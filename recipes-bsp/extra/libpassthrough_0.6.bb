@@ -12,3 +12,5 @@ FILES:${PN} = "${libdir}/lib*${SOLIBSDEV}"
 FILES_SOLIBSDEV = ""
 
 DEBIAN_NOAUTONAME:${PN} = "1"
+
+do_compile[noexec] = "1"

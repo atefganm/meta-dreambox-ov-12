@@ -8,3 +8,5 @@ inherit opendreambox-precompiled-binary
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(dm7080)$"
+
+do_compile[noexec] = "1"
