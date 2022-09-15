@@ -27,7 +27,7 @@ MACHINE_EXTRA_RDEPENDS += "\
 	libvc5dream \
 	"
 
-IMAGE_INSTALL:append = " libpagecache libpassthrough"
+IMAGE_INSTALL += "libpagecache libpassthrough"
 
 MACHINE_FEATURES += "dreambox alsa usbhost switchoff blindscan-dvbs modem dvb-c blindscan-dvbc hdmicec recovery ci usbconsole blindscan-tbs emmc mmc HDMI HDMI-IN-FHD"
 
