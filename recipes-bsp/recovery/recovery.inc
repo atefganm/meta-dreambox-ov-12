@@ -96,8 +96,8 @@ FILES:${PN}-fbscaled = "\
 
 FILES:flash-scripts = "\
 	${sbindir}/flash-fsbl \
-	${sbindir}/flash-rescue \
 	${sbindir}/flash-kernel \
+	${sbindir}/flash-rescue \
 	${sbindir}/flash-ssbl \
 	${sbindir}/librecovery \
 	${sbindir}/readspi \

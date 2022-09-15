@@ -5,10 +5,7 @@ BOX_BRAND = "dreambox"
 TARGET_ARCH = "mipsel"
 DEFAULTTUNE = "mips32el"
 
-MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-	libpagecache \
-	libpassthrough \
-	"
+IMAGE_INSTALL:append = " libpagecache libpassthrough"
 
 MTD_KERNEL = "mtd2"
 

@@ -4,9 +4,10 @@ MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
 EXTRA_IMAGEDEPENDS += "dreambox-secondstage-${MACHINE}"
 
-MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "dreambox-dvb-modules-${MACHINE}"
+
+MACHINE_EXTRA_RDEPENDS += "\
 	dreambox-boot-progress \
-	dreambox-dvb-modules-${MACHINE} \
 	${@bb.utils.contains_any("MACHINE", "dm8000 dm7020hd dm800sev2 dm500hdv2", "kernel-module-ecb", "", d)} \
 	kernel-module-hmac \
 	kernel-module-md4 \

@@ -13,9 +13,7 @@ PREFERRED_VERSION_linux-dreambox = "${KERNELVERSION}"
 PREFERRED_PROVIDER_jpeg ?= "libjpeg-turbo"
 PREFERRED_PROVIDER_jpeg-native ?= "libjpeg-turbo-native"
 
-MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-	libvc5dream \
-	"
+MACHINE_EXTRA_RDEPENDS += "libvc5dream"
 
 DREAMBOX_IMAGE_SIZE ??= "1024"
 

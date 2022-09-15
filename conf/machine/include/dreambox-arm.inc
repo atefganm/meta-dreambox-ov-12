@@ -17,16 +17,17 @@ DVBMEDIASINK_CONFIG = "--with-pcm --with-wma --with-wmv --with-dts=no --with-dts
 require conf/machine/include/soc-family.inc
 require conf/machine/include/arm/armv7a/tune-cortexa15.inc
 
-MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-	dreambox-dvb-modules-${MACHINE} \
-	libpagecache \
-	libpassthrough \
-	libvc5dream \
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "dreambox-dvb-modules-${MACHINE}"
+
+MACHINE_EXTRA_RDEPENDS += "\
 	kernel-module-bluetooth \
 	kernel-module-hmac \
 	kernel-module-md4 \
 	kernel-module-snd-pcm-oss \
+	libvc5dream \
 	"
+
+IMAGE_INSTALL:append = " libpagecache libpassthrough"
 
 MACHINE_FEATURES += "dreambox alsa usbhost switchoff blindscan-dvbs modem dvb-c blindscan-dvbc hdmicec recovery ci usbconsole blindscan-tbs emmc mmc HDMI HDMI-IN-FHD"
 
