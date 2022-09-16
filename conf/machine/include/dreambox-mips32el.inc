@@ -13,7 +13,7 @@ require conf/machine/include/dreambox.inc
 require conf/machine/include/mips/tune-mips32.inc
 
 DVBMEDIASINK_CONFIG = "--with-pcm --with-wma --with-wmv --with-dtsdownmix --with-eac3 --with-dts"
-DVBMEDIASINK_CONFIG:dm8000 = "--with-pcm --with-wma --with-wmv --with-dtsdownmix --with-eac3 --with-dts --with-limited-mpeg4v2"
+DVBMEDIASINK_CONFIG:dm8000 = "--with-pcm --with-wma --with-wmv --with-dtsdownmix --with-eac3 --with-dts --with-limited-mpeg4v2 --with-amr"
 
 CFLAGS:append:pn-titan = " -DDREAMBOX "
 
