@@ -5,8 +5,6 @@ BOX_BRAND = "dreambox"
 TARGET_ARCH = "mipsel"
 DEFAULTTUNE = "mips32el"
 
-IMAGE_INSTALL += "libpagecache libpassthrough"
-
 MTD_KERNEL = "mtd2"
 
 require conf/machine/include/dreambox.inc
@@ -19,3 +17,5 @@ CFLAGS:append:pn-titan = " -DDREAMBOX "
 
 KERNEL_FILE = "kernel.bin"
 ROOTFS_FILE = "rootfs.bin"
+
+MACHINE_FEATURES += "dreamboxlib"

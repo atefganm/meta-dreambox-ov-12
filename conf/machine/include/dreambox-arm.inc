@@ -27,9 +27,7 @@ MACHINE_EXTRA_RDEPENDS += "\
 	libvc5dream \
 	"
 
-IMAGE_INSTALL += "libpagecache libpassthrough"
-
-MACHINE_FEATURES += "dreambox alsa usbhost switchoff blindscan-dvbs modem dvb-c blindscan-dvbc hdmicec recovery ci usbconsole blindscan-tbs emmc mmc HDMI HDMI-IN-FHD"
+MACHINE_FEATURES += "dreambox alsa usbhost switchoff blindscan-dvbs modem dvb-c blindscan-dvbc hdmicec recovery ci usbconsole blindscan-tbs emmc mmc HDMI HDMI-IN-FHD dreamboxlib"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-dreambox"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "dreambox-blindscan-utils"
